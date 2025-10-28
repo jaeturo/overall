@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>물타기 계산기 | 실생활 모음zip</title>
-  <meta name="description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 실생활 모음zip 물타기 계산기입니다.">
+  <title>물타기 계산기 | 만능도구 모음zip</title>
+  <meta name="description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 만능도구 모음zip 물타기 계산기입니다.">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <div class="logo">실생활 도움zip</div>
+      <div class="logo">만능도구 모음zip</div>
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
@@ -128,14 +128,22 @@
       </ul>
     </nav>
   <script>
-    // 드롭다운 클릭 토글 (물타기 계산기 전용)
+    // 드롭다운 클릭 토글
     document.addEventListener('DOMContentLoaded', function() {
       var btn = document.getElementById('dropdownBtnAveraging');
       var menu = document.getElementById('dropdownMenuAveraging');
       var dropdown = document.getElementById('stockDropdownAveraging');
       
+      var ageBtn = document.getElementById('ageDropdownBtnAveraging');
+      var ageMenu = document.getElementById('ageDropdownMenuAveraging');
+      var ageDropdown = document.getElementById('ageDropdownAveraging');
+      
+      var compatibilityBtn = document.getElementById('compatibilityDropdownBtnAveraging');
+      var compatibilityMenu = document.getElementById('compatibilityDropdownMenuAveraging');
+      var compatibilityDropdown = document.getElementById('compatibilityDropdownAveraging');
+      
       // 드롭다운 메뉴 위치 조정 함수
-      function adjustDropdownPosition() {
+      function adjustDropdownPosition(btn, menu, dropdown) {
         if (menu.classList.contains('show')) {
           const dropdownRect = dropdown.getBoundingClientRect();
           const menuWidth = 220; // min-width 값
@@ -160,23 +168,61 @@
       btn.addEventListener('click', function(e) {
         e.stopPropagation();
         menu.classList.toggle('show');
+        ageMenu.classList.remove('show');
+        compatibilityMenu.classList.remove('show');
         
         // 메뉴가 열릴 때 위치 조정
         if (menu.classList.contains('show')) {
-          setTimeout(adjustDropdownPosition, 10);
+          setTimeout(() => adjustDropdownPosition(btn, menu, dropdown), 10);
+        }
+      });
+      
+      ageBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        ageMenu.classList.toggle('show');
+        menu.classList.remove('show');
+        compatibilityMenu.classList.remove('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (ageMenu.classList.contains('show')) {
+          setTimeout(() => adjustDropdownPosition(ageBtn, ageMenu, ageDropdown), 10);
+        }
+      });
+      
+      compatibilityBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        compatibilityMenu.classList.toggle('show');
+        menu.classList.remove('show');
+        ageMenu.classList.remove('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (compatibilityMenu.classList.contains('show')) {
+          setTimeout(() => adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown), 10);
         }
       });
       
       // 창 크기 변경 시 위치 재조정
       window.addEventListener('resize', function() {
         if (menu.classList.contains('show')) {
-          adjustDropdownPosition();
+          adjustDropdownPosition(btn, menu, dropdown);
+        }
+        if (ageMenu.classList.contains('show')) {
+          adjustDropdownPosition(ageBtn, ageMenu, ageDropdown);
+        }
+        if (compatibilityMenu.classList.contains('show')) {
+          adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown);
         }
       });
       
       document.addEventListener('click', function(e) {
         if (!dropdown.contains(e.target)) {
           menu.classList.remove('show');
+        }
+        if (!ageDropdown.contains(e.target)) {
+          ageMenu.classList.remove('show');
+        }
+        if (!compatibilityDropdown.contains(e.target)) {
+          compatibilityMenu.classList.remove('show');
         }
       });
     });
