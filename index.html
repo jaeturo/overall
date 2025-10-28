@@ -37,6 +37,12 @@
             <li><a href="zodiac-calculator.html">띠 계산기</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown" id="compatibilityDropdown">
+          <button type="button" class="dropbtn" id="compatibilityDropdownBtn">💕 궁합</button>
+          <ul class="dropdown-content" id="compatibilityDropdownMenu">
+            <li><a href="zodiac-compatibility.html">띠별 궁합 계산기</a></li>
+          </ul>
+        </li>
         <!-- 기능별 메뉴는 추후 추가 -->
   <style>
     .dropdown { position: relative; }
@@ -132,6 +138,10 @@
       var ageMenu = document.getElementById('ageDropdownMenu');
       var ageDropdown = document.getElementById('ageDropdown');
       
+      var compatibilityBtn = document.getElementById('compatibilityDropdownBtn');
+      var compatibilityMenu = document.getElementById('compatibilityDropdownMenu');
+      var compatibilityDropdown = document.getElementById('compatibilityDropdown');
+      
       // 드롭다운 메뉴 위치 조정 함수
       function adjustDropdownPosition(btn, menu, dropdown) {
         if (menu.classList.contains('show')) {
@@ -159,6 +169,7 @@
         e.stopPropagation();
         menu.classList.toggle('show');
         ageMenu.classList.remove('show');
+        compatibilityMenu.classList.remove('show');
         
         // 메뉴가 열릴 때 위치 조정
         if (menu.classList.contains('show')) {
@@ -170,10 +181,23 @@
         e.stopPropagation();
         ageMenu.classList.toggle('show');
         menu.classList.remove('show');
+        compatibilityMenu.classList.remove('show');
         
         // 메뉴가 열릴 때 위치 조정
         if (ageMenu.classList.contains('show')) {
           setTimeout(() => adjustDropdownPosition(ageBtn, ageMenu, ageDropdown), 10);
+        }
+      });
+      
+      compatibilityBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        compatibilityMenu.classList.toggle('show');
+        menu.classList.remove('show');
+        ageMenu.classList.remove('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (compatibilityMenu.classList.contains('show')) {
+          setTimeout(() => adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown), 10);
         }
       });
       
@@ -185,6 +209,9 @@
         if (ageMenu.classList.contains('show')) {
           adjustDropdownPosition(ageBtn, ageMenu, ageDropdown);
         }
+        if (compatibilityMenu.classList.contains('show')) {
+          adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown);
+        }
       });
       
       document.addEventListener('click', function(e) {
@@ -193,6 +220,9 @@
         }
         if (!ageDropdown.contains(e.target)) {
           ageMenu.classList.remove('show');
+        }
+        if (!compatibilityDropdown.contains(e.target)) {
+          compatibilityMenu.classList.remove('show');
         }
       });
     });
@@ -328,6 +358,28 @@
               <h4>띠 계산기</h4>
               <p>출생년도에 따른 띠를 계산하여 한국 전통 정보를 확인할 수 있습니다.</p>
               <a href="zodiac-calculator.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 궁합 메인 메뉴 -->
+      <div class="main-menu-card">
+        <div class="main-menu-header">
+          <div class="main-menu-icon">💕</div>
+          <div class="main-menu-info">
+            <h3>궁합</h3>
+            <p>띠별 궁합을 계산하여 연인, 친구, 가족과의 관계를 확인할 수 있습니다.</p>
+          </div>
+        </div>
+        
+        <div class="sub-menu-grid">
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">💕</div>
+            <div class="sub-menu-content">
+              <h4>띠별 궁합 계산기</h4>
+              <p>두 사람의 띠를 입력하여 연인, 친구, 가족과의 궁합을 확인할 수 있습니다.</p>
+              <a href="zodiac-compatibility.html" class="sub-menu-btn">이용하기</a>
             </div>
           </div>
         </div>
