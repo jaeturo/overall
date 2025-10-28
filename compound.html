@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복리 계산기 | 실생활 모음zip</title>
+  <meta name="description" content="원금, 이율, 기간, 월 적립액을 입력하면 복리로 성장한 최종 금액을 계산하는 실생활 모음zip 복리 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">실생활 도움zip</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownCompound">
+          <button type="button" class="dropbtn" id="ageDropdownBtnCompound">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuCompound">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+  <style>
+    .dropdown { position: relative; }
+    .dropbtn {
+      cursor: pointer;
+      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+      transition: background 0.2s, color 0.2s;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+    }
+    .dropbtn:hover {
+      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+      color: #2563eb;
+    }
+    .dropdown-content {
+      display: none !important;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #fff !important;
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
+      z-index: 20;
+      border-radius: 18px;
+      padding: 18px 0 10px 0;
+      margin: 0;
+      border: 1.5px solid #C7D9AD;
+      flex-direction: column;
+      gap: 0;
+      animation: fadeInCard 0.18s;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dropdown-content li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown-content a {
+      color: #000 !important;
+      padding: 16px 28px 14px 28px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.08rem;
+      border-radius: 10px;
+      background: none;
+      margin: 0 10px 8px 10px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .dropdown-content a:hover {
+      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
+      color: #2563eb;
+    }
+    .dropdown-content.show {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    @media (max-width: 600px) {
+      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
+      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
+      .dropbtn { font-size: 1rem; padding: 10px 14px; }
+    }
+  </style>
+      </ul>
+    </nav>
+  <script>
+    // 드롭다운 클릭 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('dropdownBtn');
+      var menu = document.getElementById('dropdownMenu');
+      var dropdown = document.getElementById('stockDropdown');
+      
+      // 드롭다운 메뉴 위치 조정 함수
+      function adjustDropdownPosition() {
+        if (menu.classList.contains('show')) {
+          const dropdownRect = dropdown.getBoundingClientRect();
+          const menuWidth = 220; // min-width 값
+          const viewportWidth = window.innerWidth;
+          
+          // 기존 위치 클래스 제거
+          menu.classList.remove('right-aligned', 'center-aligned');
+          
+          // 오른쪽에서 잘릴 경우
+          if (dropdownRect.left + menuWidth > viewportWidth) {
+            // 왼쪽에서도 잘릴 경우 중앙 정렬
+            if (dropdownRect.left - menuWidth < 0) {
+              menu.classList.add('center-aligned');
+            } else {
+              // 오른쪽 정렬
+              menu.classList.add('right-aligned');
+            }
+          }
+        }
+      }
+      
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (menu.classList.contains('show')) {
+          setTimeout(adjustDropdownPosition, 10);
+        }
+      });
+      
+      // 창 크기 변경 시 위치 재조정
+      window.addEventListener('resize', function() {
+        if (menu.classList.contains('show')) {
+          adjustDropdownPosition();
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+
+    // 모바일 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  </header>
+  <main class="main-content">
+    <section class="intro-section">
+      <h1>복리 계산기</h1>
+      <p>원금, 이율, 기간, 월 적립액을 입력하면 복리로 성장한 최종 금액을 계산합니다.<br>
+      다양한 투자 시나리오에 활용할 수 있습니다.</p>
+    </section>
+    <section class="feature-section">
+      <div class="compound-card">
+        <div class="currency-tabs">
+          <button type="button" id="tabKRW" class="tab-btn active">원화(₩)</button>
+          <button type="button" id="tabUSD" class="tab-btn">달러($)</button>
+        </div>
+        <form id="compoundForm" autocomplete="off">
+          <div class="form-group">
+            <label for="principal">원금(<span id="currencyLabel">₩</span>)</label>
+            <input type="text" id="principal" name="principal" inputmode="numeric" pattern="[0-9,]*" placeholder="10,000,000" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="rate">연이율(%)</label>
+            <input type="number" id="rate" name="rate" min="0" max="100" step="0.01" placeholder="5.5" required>
+          </div>
+          <div class="form-group">
+            <label for="years">기간(년)</label>
+            <input type="number" id="years" name="years" min="1" max="100" step="1" placeholder="10" required>
+          </div>
+          <div class="form-group">
+            <label for="tax">세금(%)</label>
+            <input type="number" id="tax" name="tax" min="0" max="100" step="0.01" placeholder="15.4">
+          </div>
+          <div class="form-group">
+            <label for="frequency">복리 주기</label>
+            <select id="frequency" name="frequency" class="" required>
+              <option value="year">연</option>
+              <option value="month" selected>월</option>
+              <option value="week">주</option>
+              <option value="day">일</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="monthly">월 적립액(<span id="currencyLabel2">₩</span>, 선택)</label>
+            <input type="text" id="monthly" name="monthly" inputmode="numeric" pattern="[0-9,]*" placeholder="200,000" autocomplete="off">
+          </div>
+          <div class="form-group" id="fxRateGroup" style="display:none;">
+            <label for="fxRate">환율(1달러당 원화)</label>
+            <input type="number" id="fxRate" name="fxRate" min="1" step="0.01" placeholder="1350">
+          </div>
+          <button type="submit" class="btn">계산하기</button>
+        </form>
+      </div>
+      <div id="resultSection" class="compound-result" style="display:none;">
+        <div id="resultSummaryCard" style="background:linear-gradient(90deg,#e6f4ea 60%,#f7f8fa 100%);border-radius:12px;padding:18px 14px 14px 14px;margin-bottom:18px;box-shadow:0 2px 8px rgba(143,183,164,0.10);text-align:center;"></div>
+        <h2 id="resultTitle">계산 결과</h2>
+        <table class="result-table" id="resultTable">
+          <thead>
+            <tr id="resultTableHeader"></tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 사용 방법 안내를 아래로 이동 -->
+    <section class="feature-section" style="max-width:480px;margin:32px auto 0 auto;">
+      <div style="background:#f1f5f9;border-radius:10px;padding:18px 14px 12px 14px;color:#374151;font-size:0.98rem;line-height:1.7;box-shadow:0 1px 6px rgba(143,183,164,0.06);">
+        <strong>사용 방법 안내</strong><br>
+        <ul style="margin:10px 0 0 18px;padding:0;">
+          <li><b>원화/달러 탭</b>을 선택해 계산 통화를 정하세요. 달러 계산 시 환율 입력란이 나타납니다.</li>
+          <li><b>원금</b>: 투자 시작 금액을 입력합니다.</li>
+          <li><b>연이율</b>: 연간 예상 수익률(%)을 입력합니다.</li>
+          <li><b>기간</b>: 투자 기간(년 단위)을 입력합니다.</li>
+          <li><b>복리 주기</b>: 이자가 얼마나 자주 복리로 붙는지 선택하세요(연, 월, 주, 일).</li>
+          <li><b>월 적립액</b>: 매월 추가로 납입할 금액이 있다면 입력합니다(선택).</li>
+          <li><b>환율</b>: 달러 계산 시 1달러당 원화 환율을 입력하세요(예: 1350).</li>
+          <li><b>세금</b>: 이자에 적용할 세율(%)을 입력하세요. (예: 15.4)</li>
+          <li>모든 값을 입력한 후 <b>계산하기</b> 버튼을 누르면 결과가 아래에 표시됩니다.</li>
+        </ul>
+        <div style="margin-top:10px;color:#b91c1c;font-size:0.97rem;"><b>※ 복리 주기별 연도별 최대 계산 가능 기간 안내</b><br>
+          <span style="color:#374151;">결과 표는 최대 1000행까지만 표시됩니다.<br>
+          <b>연 단위는 최대 1000년까지 가능합니다.</b><br>
+          <b>월 단위는 최대 83년까지 가능합니다.</b><br>
+          <b>주 단위는 최대 19년까지 가능합니다.</b><br>
+          <b>일 단위는 최대 2년까지 가능합니다.</b></span>
+        </div>
+        <div style="margin-top:8px;color:#5a7d6c;font-size:0.97rem;">※ 계산 결과는 참고용이며, 실제 투자 전 전문가 상담을 권장합니다.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div style="margin-bottom:6px;">
+      <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+  </footer>
+  <script>
+    // 입력값에 천 단위 콤마 자동 적용
+    function addComma(n) {
+      n = n.replace(/[^\d]/g, '');
+      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
+    }
+    function removeComma(n) {
+      return n.replace(/,/g, '');
+    }
+    document.getElementById('principal').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+    document.getElementById('monthly').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+
+    // 통화 탭 UI 및 계산 로직
+    let currentCurrency = 'KRW';
+    document.getElementById('tabKRW').addEventListener('click', function() {
+      currentCurrency = 'KRW';
+      this.classList.add('active');
+      document.getElementById('tabUSD').classList.remove('active');
+      document.getElementById('currencyLabel').textContent = '₩';
+      document.getElementById('currencyLabel2').textContent = '₩';
+      document.getElementById('fxRateGroup').style.display = 'none';
+      document.getElementById('thInterest').textContent = '이자(₩)';
+      document.getElementById('thAmount').textContent = '누적금액(₩)';
+      document.getElementById('resultTitle').textContent = '연도별 계산 결과';
+    });
+    document.getElementById('tabUSD').addEventListener('click', function() {
+      currentCurrency = 'USD';
+      this.classList.add('active');
+      document.getElementById('tabKRW').classList.remove('active');
+      document.getElementById('currencyLabel').textContent = '$';
+      document.getElementById('currencyLabel2').textContent = '$';
+      document.getElementById('fxRateGroup').style.display = 'block';
+      document.getElementById('thInterest').textContent = '이자($)';
+      document.getElementById('thAmount').textContent = '누적금액($)';
+      document.getElementById('resultTitle').textContent = '연도별 계산 결과 (USD)';
+    });
+
+    document.getElementById('compoundForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const principal = parseFloat(removeComma(document.getElementById('principal').value));
+      const years = parseInt(document.getElementById('years').value, 10);
+      const rate = parseFloat(document.getElementById('rate').value);
+      const monthly = parseFloat(removeComma(document.getElementById('monthly').value)) || 0;
+      const freq = document.getElementById('frequency').value;
+      let fxRate = parseFloat(document.getElementById('fxRate').value) || 1350;
+      const taxInput = document.getElementById('tax').value;
+      const taxRate = taxInput !== '' && !isNaN(parseFloat(taxInput)) ? parseFloat(taxInput) / 100 : null;
+      if (isNaN(principal) || isNaN(years) || isNaN(rate) || principal < 0 || years < 1 || rate < 0) {
+        alert('모든 값을 올바르게 입력해주세요.');
+        return;
+      }
+      // 복리 주기별 n, r 계산
+      let n, r, label, totalPeriods;
+      if (freq === 'year') {
+        n = 1;
+        r = rate / 100;
+        label = '연도';
+        totalPeriods = years;
+      } else if (freq === 'month') {
+        n = 12;
+        r = rate / 100 / 12;
+        label = '개월';
+        totalPeriods = years * 12;
+      } else if (freq === 'week') {
+        n = 52;
+        r = rate / 100 / 52;
+        label = '주';
+        totalPeriods = years * 52;
+      } else if (freq === 'day') {
+        n = 365;
+        r = rate / 100 / 365;
+        label = '일';
+        totalPeriods = years * 365;
+      }
+      let amount = principal;
+      let totalInterest = 0;
+      let totalDeposit = 0;
+      const tbody = document.querySelector('#resultTable tbody');
+      const theadTr = document.getElementById('resultTableHeader');
+      tbody.innerHTML = '';
+      if (taxRate !== null && taxRate > 0) {
+        theadTr.innerHTML = `<th>${label}</th><th>세전 이자(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>세후 이자(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>세전 누적금액(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>세후 누적금액(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>누적수익률(%)</th>`;
+      } else {
+        theadTr.innerHTML = `<th>${label}</th><th>이자(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>누적금액(${currentCurrency === 'USD' ? '$' : '₩'})</th><th>누적수익률(%)</th>`;
+      }
+      let afterTaxAmount = principal;
+      let totalInterestAfterTax = 0;
+      for (let i = 1; i <= totalPeriods; i++) {
+        // 월 적립액은 복리 주기와 무관하게 매월 1회만 적립
+        if (freq === 'year') {
+          if (i % n === 0) {
+            amount += monthly * 12;
+            afterTaxAmount += monthly * 12;
+            totalDeposit += monthly * 12;
+          }
+        } else {
+          // 월 단위마다 적립
+          if (i % (n === 12 ? 1 : n / 12) === 0) {
+            amount += monthly;
+            afterTaxAmount += monthly;
+            totalDeposit += monthly;
+          }
+        }
+        let interest = amount * r;
+        let interestAfterTax = taxRate !== null && taxRate > 0 ? interest * (1 - taxRate) : null;
+        totalInterest += interest;
+        if (taxRate !== null && taxRate > 0) totalInterestAfterTax += interestAfterTax;
+        amount += interest;
+        if (taxRate !== null && taxRate > 0) afterTaxAmount += interestAfterTax;
+        const cumulativeRate = taxRate !== null && taxRate > 0
+          ? ((afterTaxAmount - principal - totalDeposit) / principal) * 100
+          : ((amount - principal - totalDeposit) / principal) * 100;
+        let interestVal = Math.round(interest);
+        let interestAfterTaxVal = interestAfterTax !== null ? Math.round(interestAfterTax) : null;
+        let amountVal = Math.round(amount);
+        let afterTaxAmountVal = Math.round(afterTaxAmount);
+        if (currentCurrency === 'USD') {
+          interestVal = Math.round(interest / fxRate);
+          if (interestAfterTaxVal !== null) interestAfterTaxVal = Math.round(interestAfterTax / fxRate);
+          amountVal = Math.round(amount / fxRate);
+          if (taxRate !== null && taxRate > 0) afterTaxAmountVal = Math.round(afterTaxAmount / fxRate);
+        }
+        const tr = document.createElement('tr');
+        if (taxRate !== null && taxRate > 0) {
+          tr.innerHTML = `
+            <td>${i}</td>
+            <td>+${interestVal.toLocaleString('ko-KR')}</td>
+            <td>+${interestAfterTaxVal.toLocaleString('ko-KR')}</td>
+            <td>${amountVal.toLocaleString('ko-KR')}</td>
+            <td>${afterTaxAmountVal.toLocaleString('ko-KR')}</td>
+            <td>${cumulativeRate.toFixed(2)}</td>
+          `;
+        } else {
+          tr.innerHTML = `
+            <td>${i}</td>
+            <td>+${interestVal.toLocaleString('ko-KR')}</td>
+            <td>${amountVal.toLocaleString('ko-KR')}</td>
+            <td>${cumulativeRate.toFixed(2)}</td>
+          `;
+        }
+        tbody.appendChild(tr);
+        if (i >= 1000) break;
+      }
+      // 요약 카드 표시
+      let summary = '';
+      let finalAmount = Math.round(amount);
+      let finalAfterTaxAmount = Math.round(afterTaxAmount);
+      let totalDepositAll = Math.round(principal + totalDeposit);
+      let totalInterestAll = Math.round(totalInterest);
+      let totalInterestAfterTaxAll = Math.round(totalInterestAfterTax);
+      if (currentCurrency === 'KRW') {
+        summary = `
+          <div class="summary-block">
+            <div class="summary-title">최종 금액${taxRate !== null && taxRate > 0 ? ' (세전)' : ''}</div>
+            <div class="summary-value">${finalAmount.toLocaleString('ko-KR')}원</div>
+          </div>
+          ${taxRate !== null && taxRate > 0 ? `<div class="summary-block">
+            <div class="summary-title">최종 금액 (세후)</div>
+            <div class="summary-value positive">${finalAfterTaxAmount.toLocaleString('ko-KR')}원</div>
+          </div>` : ''}
+          <div class="summary-block">
+            <div class="summary-label">총 납입액</div>
+            <div class="summary-value">${totalDepositAll.toLocaleString('ko-KR')}원</div>
+          </div>
+          <div class="summary-block">
+            <div class="summary-label">총 이자합계${taxRate !== null && taxRate > 0 ? ' (세전)' : ''}</div>
+            <div class="summary-value">${totalInterestAll.toLocaleString('ko-KR')}원</div>
+          </div>
+          ${taxRate !== null && taxRate > 0 ? `<div class="summary-block">
+            <div class="summary-label">총 이자합계 (세후)</div>
+            <div class="summary-value positive">${totalInterestAfterTaxAll.toLocaleString('ko-KR')}원</div>
+          </div>` : ''}
+        `;
+      } else {
+        summary = `
+          <div class="summary-block">
+            <div class="summary-title">최종 금액${taxRate !== null && taxRate > 0 ? ' (세전)' : ''}</div>
+            <div class="summary-value">${Math.round(finalAmount / fxRate).toLocaleString('ko-KR')}$</div>
+          </div>
+          ${taxRate !== null && taxRate > 0 ? `<div class="summary-block">
+            <div class="summary-title">최종 금액 (세후)</div>
+            <div class="summary-value positive">${Math.round(finalAfterTaxAmount / fxRate).toLocaleString('ko-KR')}$</div>
+          </div>` : ''}
+          <div class="summary-block">
+            <div class="summary-label">총 납입액</div>
+            <div class="summary-value">${Math.round(totalDepositAll / fxRate).toLocaleString('ko-KR')}$</div>
+          </div>
+          <div class="summary-block">
+            <div class="summary-label">총 이자합계${taxRate !== null && taxRate > 0 ? ' (세전)' : ''}</div>
+            <div class="summary-value">${Math.round(totalInterestAll / fxRate).toLocaleString('ko-KR')}$</div>
+          </div>
+          ${taxRate !== null && taxRate > 0 ? `<div class="summary-block">
+            <div class="summary-label">총 이자합계 (세후)</div>
+            <div class="summary-value positive">${Math.round(totalInterestAfterTaxAll / fxRate).toLocaleString('ko-KR')}$</div>
+          </div>` : ''}
+          <div class="summary-block">
+            <div class="summary-label">환율 기준</div>
+            <div class="summary-value">${fxRate.toLocaleString('ko-KR')}원/$</div>
+          </div>
+        `;
+      }
+      document.getElementById('resultSummaryCard').innerHTML = summary;
+      document.getElementById('resultSection').style.display = 'block';
+    });
+  </script>
+  </script>
+</body>
+</html>

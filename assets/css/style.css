@@ -1,0 +1,982 @@
+/* Pretendard 폰트 정의 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* ----- 공통 헤더 드롭다운 카드형 메뉴 스타일 ----- */
+.dropdown { position: relative; }
+.dropbtn {
+  cursor: pointer;
+  background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.dropbtn:hover {
+  background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+  color: #2563eb;
+}
+.dropdown-content {
+  display: none !important;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff !important;
+  min-width: 220px;
+  box-shadow: 0 8px 32px rgba(136,191,120,0.18);
+  z-index: 20;
+  border-radius: 18px;
+  padding: 18px 0 10px 0;
+  margin: 0;
+  border: 1.5px solid #C7D9AD;
+  flex-direction: column;
+  gap: 0;
+  animation: fadeInCard 0.18s;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 드롭다운 메뉴가 화면 오른쪽 끝에서 잘리지 않도록 조정 */
+.dropdown-content.right-aligned {
+  left: auto;
+  right: 0;
+}
+
+.dropdown-content.center-aligned {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-content li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dropdown-content a {
+  color: #000 !important;
+  padding: 16px 28px 14px 28px;
+  text-decoration: none;
+  display: block;
+  font-size: 1.08rem;
+  border-radius: 10px;
+  background: none;
+  margin: 0 10px 8px 10px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 1px 4px rgba(136,191,120,0.06);
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.dropdown-content a:hover {
+  background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
+  color: #2563eb;
+}
+.dropdown-content.show {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+@media (max-width: 600px) {
+  .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
+  .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
+  .dropbtn { font-size: 1rem; padding: 10px 14px; }
+}
+/* select도 input과 동일하게 */
+.compound-card select {
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1.5px solid #98BF8E;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+  transition: border 0.2s;
+}
+.compound-card select:focus {
+  border-color: #88BF78;
+  outline: none;
+}
+.compound-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.compound-card .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 0;
+}
+/* 통합: number/text 모두 동일 스타일 적용 */
+.compound-card input[type="number"],
+.compound-card input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  background: #fff;
+  border: 1.5px solid #98BF8E;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+  transition: border 0.2s;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+/* 복리 계산기 전용 추가 스타일 */
+.compound-card {
+  background: linear-gradient(135deg, #C7D9AD 0%, #fff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(136,191,120,0.13);
+  padding: 32px 22px 28px 22px;
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.compound-card h1 {
+  color: #5a7d6c;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.compound-card label {
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.compound-card input[type="number"]:focus,
+.compound-card input[type="text"]:focus {
+  border-color: #88BF78;
+  outline: none;
+}
+.compound-card .btn {
+  background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  padding: 16px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.compound-card .btn:hover {
+  background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+}
+.compound-result {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(136,191,120,0.09);
+  padding: 24px 18px;
+  margin-top: 18px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.compound-result h2 {
+  color: #5a7d6c;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+.compound-result .result-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(136,191,120,0.13);
+  margin-bottom: 18px;
+  background: #fff;
+}
+.result-table th {
+  background: #88BF78;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 0 10px 0;
+  border-bottom: 2px solid #C7D9AD;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.result-table td {
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 1.01rem;
+  text-align: right;
+  padding: 10px 8px 10px 0;
+  border-bottom: 1px solid #F0F4E8;
+  transition: background 0.15s;
+  font-weight: 500;
+}
+.result-table tr:nth-child(even) td {
+  background: #F6FAF2;
+  color: #1a1a1a;
+}
+.result-table tr:hover td {
+  background: #E9F5E1;
+  color: #1a1a1a;
+}
+.result-table td:first-child, .result-table th:first-child {
+  text-align: center;
+  color: #2d3a4b;
+  font-weight: 600;
+}
+.result-table td:last-child, .result-table th:last-child {
+  color: #1e40af;
+  font-weight: 600;
+}
+.result-table td {
+  border-right: none;
+}
+
+/* 요약 카드 개선 */
+#resultSummaryCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  justify-content: center;
+  align-items: stretch;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 18px !important;
+}
+#resultSummaryCard .summary-block {
+  flex: 1 1 180px;
+  min-width: 160px;
+  background: linear-gradient(135deg, #C7D9AD 60%, #fff 100%);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(136,191,120,0.10);
+  padding: 18px 14px 14px 14px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#resultSummaryCard .summary-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin-bottom: 6px;
+}
+#resultSummaryCard .summary-value {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+#resultSummaryCard .summary-value.positive {
+  color: #198754;
+}
+#resultSummaryCard .summary-label {
+  font-size: 0.98rem;
+  color: #374151;
+  margin-bottom: 2px;
+}
+@media (max-width: 600px) {
+  #resultSummaryCard {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #resultSummaryCard .summary-block {
+    min-width: 0;
+    width: 100%;
+    padding: 14px 10px 10px 10px;
+  }
+}
+/* 통화 탭 버튼 스타일 - 강력한 우선순위 */
+.currency-tabs {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  margin-bottom: 18px !important;
+}
+
+.tab-btn {
+  flex: 1 !important;
+  padding: 12px 0 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  outline: none !important;
+  font-size: 1rem !important;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif !important;
+}
+
+/* 선택된 버튼 (Active) - 강한 녹색 배경 */
+.tab-btn.active {
+  background: linear-gradient(135deg, #88BF78 0%, #98BF8E 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(136,191,120,0.4) !important;
+  transform: translateY(-2px) !important;
+  border: 2px solid #7aac6a !important;
+}
+
+/* 선택되지 않은 버튼 (Inactive) - 명확한 회색 배경 */
+.tab-btn:not(.active) {
+  background: #f8fafc !important;
+  color: #64748b !important;
+  border: 2px solid #e2e8f0 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  transform: translateY(0px) !important;
+}
+
+/* 선택되지 않은 버튼 호버 효과 */
+.tab-btn:not(.active):hover {
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 버튼 클릭 효과 - 눌림 효과 */
+.tab-btn:active {
+  transform: translateY(0px) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+}
+
+/* 선택된 버튼 클릭 효과 */
+.tab-btn.active:active {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(136,191,120,0.3) !important;
+}
+
+/* 실생활 모음zip - 메인 스타일 */
+:root {
+  --primary: #88BF78;
+  --primary-dark: #98BF8E;
+  --accent: #C7D9AD;
+  --neutral-bg: #C7D9AD;
+  --neutral-card: #fff;
+  --neutral-border: #98BF8E;
+  --neutral-text: #2d3a4b;
+}
+body {
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+  background: var(--neutral-bg);
+  margin: 0;
+  color: var(--neutral-text);
+}
+.header {
+  background: var(--primary);
+  color: #fff;
+  padding: 18px 0 10px 0;
+  text-align: center;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+}
+.logo {
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+.nav-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+.nav-menu li a:hover {
+  color: #2563eb;
+}
+
+/* 햄버거 메뉴 버튼 */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* 모바일 메뉴 스타일 */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+  
+  .logo {
+    z-index: 1001;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(136, 191, 120, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    gap: 30px;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu li {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-menu li a {
+    font-size: 1.2rem;
+    padding: 16px 24px;
+    width: 200px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+  }
+  
+  .nav-menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  /* 드롭다운 메뉴 모바일 스타일 */
+  .dropdown {
+    position: static;
+  }
+  
+  .dropdown-content {
+    position: static !important;
+    display: none !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 12px !important;
+    margin-top: 10px !important;
+    padding: 15px 0 10px 0 !important;
+    width: 200px !important;
+    min-width: auto !important;
+  }
+  
+  .dropdown-content.show {
+    display: block !important;
+  }
+  
+  .dropdown-content a {
+    color: #2d3a4b !important;
+    padding: 12px 20px !important;
+    font-size: 1rem !important;
+    margin: 0 15px 8px 15px !important;
+    border-radius: 8px !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  
+  .dropdown-content a:hover {
+    background: rgba(136, 191, 120, 0.1) !important;
+    color: #2d3a4b !important;
+    transform: none !important;
+  }
+  
+  .dropbtn {
+    width: 200px !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    padding: 16px 24px !important;
+    height: auto !important;
+  }
+}
+.main-content {
+  max-width: 700px;
+  margin: 36px auto 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(136,191,120,0.07);
+  padding: 36px 28px 28px 28px;
+}
+.intro-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.intro-section h1 {
+  color: var(--primary);
+  font-size: 2.1rem;
+  margin-bottom: 10px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+  font-weight: 700;
+}
+.feature-section {
+  margin-top: 18px;
+}
+.feature-section h2 {
+  color: #2d3a4b;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.feature-list {
+  list-style: disc inside;
+  color: #374151;
+  font-size: 1.05rem;
+  padding-left: 16px;
+}
+/* 기능 카드 스타일 */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(136, 191, 120, 0.1);
+  border: 1px solid #e5f3e5;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #88BF78 0%, #98BF8E 100%);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(136, 191, 120, 0.2);
+  border-color: #88BF78;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.feature-card h3 {
+  color: #2d3a4b;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.feature-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.feature-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(136, 191, 120, 0.2);
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.feature-btn:hover {
+  background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(136, 191, 120, 0.3);
+  color: #fff;
+}
+
+/* 메인 메뉴 카드 스타일 */
+.main-menu-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(136, 191, 120, 0.15);
+  border: 2px solid #e5f3e5;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.main-menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(136, 191, 120, 0.2);
+  border-color: #88BF78;
+}
+
+.main-menu-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f8f0;
+}
+
+.main-menu-icon {
+  font-size: 3.5rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.main-menu-info h3 {
+  color: #2d3a4b;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.main-menu-info p {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 서브 메뉴 그리드 */
+.sub-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* 마지막 줄에 카드가 1개만 있을 때 전체 줄 차지 */
+.sub-menu-item:nth-last-child(1):nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+/* 투자 계산기 섹션의 마지막 카드가 전체 줄 차지하도록 */
+.main-menu-card .sub-menu-item:nth-child(7) {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+.sub-menu-item {
+  background: #f8f9fa;
+  border: 1.5px solid #e5f3e5;
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sub-menu-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #88BF78 0%, #98BF8E 100%);
+}
+
+.sub-menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(136, 191, 120, 0.15);
+  border-color: #88BF78;
+  background: #fff;
+}
+
+.sub-menu-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.sub-menu-content h4 {
+  color: #2d3a4b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.sub-menu-content p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.sub-menu-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(136, 191, 120, 0.2);
+  font-family: 'Pretendard', 'Noto Sans KR', Arial, sans-serif;
+}
+
+.sub-menu-btn:hover {
+  background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(136, 191, 120, 0.3);
+  color: #fff;
+}
+
+/* 반응형 디자인 - 메인 메뉴 */
+@media (max-width: 768px) {
+  .main-menu-card {
+    padding: 24px 20px;
+  }
+  
+  .main-menu-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .main-menu-icon {
+    font-size: 3rem;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  
+  .main-menu-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .main-menu-info p {
+    font-size: 1rem;
+  }
+  
+  .sub-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .sub-menu-item {
+    padding: 16px;
+  }
+  
+  .sub-menu-icon {
+    font-size: 2rem;
+  }
+  
+  .sub-menu-content h4 {
+    font-size: 1.1rem;
+  }
+  
+  .sub-menu-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-menu-card {
+    padding: 20px 16px;
+  }
+  
+  .main-menu-icon {
+    font-size: 2.5rem;
+  }
+  
+  .main-menu-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .main-menu-info p {
+    font-size: 0.95rem;
+  }
+  
+  .sub-menu-item {
+    padding: 14px;
+  }
+  
+  .sub-menu-icon {
+    font-size: 1.8rem;
+  }
+  
+  .sub-menu-content h4 {
+    font-size: 1rem;
+  }
+  
+  .sub-menu-content p {
+    font-size: 0.85rem;
+  }
+  
+  .sub-menu-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
+.footer {
+  background: #98BF8E;
+  color: #374151;
+  text-align: center;
+  padding: 18px 0 8px 0;
+  font-size: 0.97rem;
+  margin-top: 36px;
+}
+.footer-links a {
+  color: #88BF78;
+  text-decoration: none;
+  margin: 0 4px;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #C7D9AD;
+}
+.footer-copy {
+  margin-top: 6px;
+}
+@media (min-width: 768px) {
+  .main-content {
+    max-width: 900px;
+    padding: 48px 36px 36px 36px;
+  }
+}

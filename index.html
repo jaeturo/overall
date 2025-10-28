@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실생활 모음zip - 메인</title>
+  <meta name="description" content="실생활에 도움되는 다양한 계산기와 검사기 기능을 한 곳에 모은 사이트입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">실생활 도움zip</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+  <style>
+    .dropdown { position: relative; }
+    .dropbtn {
+      cursor: pointer;
+      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+      transition: background 0.2s, color 0.2s;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+    }
+    .dropbtn:hover {
+      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+      color: #2563eb;
+    }
+    .dropdown-content {
+      display: none !important;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #fff !important;
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
+      z-index: 20;
+      border-radius: 18px;
+      padding: 18px 0 10px 0;
+      margin: 0;
+      border: 1.5px solid #C7D9AD;
+      flex-direction: column;
+      gap: 0;
+      animation: fadeInCard 0.18s;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dropdown-content li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown-content a {
+      color: #000 !important;
+      padding: 16px 28px 14px 28px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.08rem;
+      border-radius: 10px;
+      background: none;
+      margin: 0 10px 8px 10px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .dropdown-content a:hover {
+      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
+      color: #2563eb;
+    }
+    .dropdown-content.show {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    @media (max-width: 600px) {
+      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
+      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
+      .dropbtn { font-size: 1rem; padding: 10px 14px; }
+    }
+  </style>
+      </ul>
+    </nav>
+  <script>
+    // 드롭다운 클릭 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('dropdownBtn');
+      var menu = document.getElementById('dropdownMenu');
+      var dropdown = document.getElementById('stockDropdown');
+      
+      var ageBtn = document.getElementById('ageDropdownBtn');
+      var ageMenu = document.getElementById('ageDropdownMenu');
+      var ageDropdown = document.getElementById('ageDropdown');
+      
+      // 드롭다운 메뉴 위치 조정 함수
+      function adjustDropdownPosition(btn, menu, dropdown) {
+        if (menu.classList.contains('show')) {
+          const dropdownRect = dropdown.getBoundingClientRect();
+          const menuWidth = 220; // min-width 값
+          const viewportWidth = window.innerWidth;
+          
+          // 기존 위치 클래스 제거
+          menu.classList.remove('right-aligned', 'center-aligned');
+          
+          // 오른쪽에서 잘릴 경우
+          if (dropdownRect.left + menuWidth > viewportWidth) {
+            // 왼쪽에서도 잘릴 경우 중앙 정렬
+            if (dropdownRect.left - menuWidth < 0) {
+              menu.classList.add('center-aligned');
+            } else {
+              // 오른쪽 정렬
+              menu.classList.add('right-aligned');
+            }
+          }
+        }
+      }
+      
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+        ageMenu.classList.remove('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (menu.classList.contains('show')) {
+          setTimeout(() => adjustDropdownPosition(btn, menu, dropdown), 10);
+        }
+      });
+      
+      ageBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        ageMenu.classList.toggle('show');
+        menu.classList.remove('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (ageMenu.classList.contains('show')) {
+          setTimeout(() => adjustDropdownPosition(ageBtn, ageMenu, ageDropdown), 10);
+        }
+      });
+      
+      // 창 크기 변경 시 위치 재조정
+      window.addEventListener('resize', function() {
+        if (menu.classList.contains('show')) {
+          adjustDropdownPosition(btn, menu, dropdown);
+        }
+        if (ageMenu.classList.contains('show')) {
+          adjustDropdownPosition(ageBtn, ageMenu, ageDropdown);
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+        if (!ageDropdown.contains(e.target)) {
+          ageMenu.classList.remove('show');
+        }
+      });
+    });
+
+    // 모바일 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  </header>
+  <main class="main-content">
+    <section class="intro-section">
+  <h1>실생활 도움zip</h1>
+  <p>실생활에 꼭 필요한 계산기와 검사기, 다양한 도구들을 한 곳에 모았습니다.<br>
+  누구나 쉽고 빠르게 사용할 수 있는 실용적인 기능들을 경험해보세요.</p>
+    </section>
+    <section class="feature-section">
+      <h2>현재 이용 가능한 기능</h2>
+      
+      <!-- 투자 계산기 메인 메뉴 -->
+      <div class="main-menu-card">
+        <div class="main-menu-header">
+          <div class="main-menu-icon">📈</div>
+          <div class="main-menu-info">
+            <h3>투자 계산기</h3>
+            <p>주식 투자와 관련된 다양한 계산 도구들을 제공합니다.</p>
+          </div>
+        </div>
+        
+        <div class="sub-menu-grid">
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">📈</div>
+            <div class="sub-menu-content">
+              <h4>복리 계산기</h4>
+              <p>원금, 이율, 기간을 입력하여 복리로 성장한 최종 금액을 계산합니다.</p>
+              <a href="compound.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">💰</div>
+            <div class="sub-menu-content">
+              <h4>배당률 계산기</h4>
+              <p>주식의 배당금과 배당수익률을 간편하게 계산할 수 있습니다.</p>
+              <a href="dividend.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">📊</div>
+            <div class="sub-menu-content">
+              <h4>주식 수익률 계산기</h4>
+              <p>매입가, 현재가, 수량을 입력하여 투자 수익률을 계산합니다.</p>
+              <a href="profit.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">💧</div>
+            <div class="sub-menu-content">
+              <h4>물타기 계산기</h4>
+              <p>목표 평균 단가를 설정하고 필요한 추가 매수 수량을 계산합니다.</p>
+              <a href="averaging.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">📊</div>
+            <div class="sub-menu-content">
+              <h4>여러 종목 평단가 계산기</h4>
+              <p>여러 종목의 평균 단가를 한 번에 계산하여 전체 포트폴리오를 관리합니다.</p>
+              <a href="multi-average.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">🇺🇸</div>
+            <div class="sub-menu-content">
+              <h4>미국주식 양도세 계산기</h4>
+              <p>미국주식 매매 시 발생하는 양도소득세와 증권거래세를 계산합니다.</p>
+              <a href="us-tax-calculator.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">💰</div>
+            <div class="sub-menu-content">
+              <h4>미국주식 공제 혜택 계산기</h4>
+              <p>연간 250만원 공제 혜택을 활용한 매매 전략의 수익을 계산합니다.</p>
+              <a href="us-deduction-calculator.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 나이 계산기 메인 메뉴 -->
+      <div class="main-menu-card">
+        <div class="main-menu-header">
+          <div class="main-menu-icon">🎂</div>
+          <div class="main-menu-info">
+            <h3>나이 계산기</h3>
+            <p>만 나이, 세는 나이, 연 나이를 한 번에 계산하여 정확한 나이를 확인할 수 있습니다.</p>
+          </div>
+        </div>
+        
+        <div class="sub-menu-grid">
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">🎂</div>
+            <div class="sub-menu-content">
+              <h4>나이 계산기</h4>
+              <p>만 나이, 세는 나이, 연 나이를 계산하여 정확한 나이를 확인할 수 있습니다.</p>
+              <a href="age-calculator.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+          
+          <div class="sub-menu-item">
+            <div class="sub-menu-icon">🐉</div>
+            <div class="sub-menu-content">
+              <h4>띠 계산기</h4>
+              <p>출생년도에 따른 띠를 계산하여 한국 전통 정보를 확인할 수 있습니다.</p>
+              <a href="zodiac-calculator.html" class="sub-menu-btn">이용하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div style="margin-bottom:6px;">
+      <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+  </footer>
+</body>
+</html>

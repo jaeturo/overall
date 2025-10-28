@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여러 종목 평단가 계산기 | 실생활 모음zip</title>
+  <meta name="description" content="여러 종목의 평균 단가를 한 번에 계산하는 실생활 모음zip 여러 종목 평단가 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">실생활 도움zip</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownMulti">
+          <button type="button" class="dropbtn" id="dropdownBtnMulti">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuMulti">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownMulti">
+          <button type="button" class="dropbtn" id="ageDropdownBtnMulti">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuMulti">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+  <style>
+    .dropdown { position: relative; }
+    .dropbtn {
+      cursor: pointer;
+      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+      transition: background 0.2s, color 0.2s;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+    }
+    .dropbtn:hover {
+      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+      color: #2563eb;
+    }
+    .dropdown-content {
+      display: none !important;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #fff !important;
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
+      z-index: 20;
+      border-radius: 18px;
+      padding: 18px 0 10px 0;
+      margin: 0;
+      border: 1.5px solid #C7D9AD;
+      flex-direction: column;
+      gap: 0;
+      animation: fadeInCard 0.18s;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dropdown-content li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown-content a {
+      color: #000 !important;
+      padding: 16px 28px 14px 28px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.08rem;
+      border-radius: 10px;
+      background: none;
+      margin: 0 10px 8px 10px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .dropdown-content a:hover {
+      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
+      color: #2563eb;
+    }
+    .dropdown-content.show {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    @media (max-width: 600px) {
+      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
+      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
+      .dropbtn { font-size: 1rem; padding: 10px 14px; }
+    }
+  </style>
+      </ul>
+    </nav>
+  <script>
+    // 드롭다운 클릭 토글 (여러 종목 평단가 계산기 전용)
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('dropdownBtnMulti');
+      var menu = document.getElementById('dropdownMenuMulti');
+      var dropdown = document.getElementById('stockDropdownMulti');
+      
+      // 드롭다운 메뉴 위치 조정 함수
+      function adjustDropdownPosition() {
+        if (menu.classList.contains('show')) {
+          const dropdownRect = dropdown.getBoundingClientRect();
+          const menuWidth = 220; // min-width 값
+          const viewportWidth = window.innerWidth;
+          
+          // 기존 위치 클래스 제거
+          menu.classList.remove('right-aligned', 'center-aligned');
+          
+          // 오른쪽에서 잘릴 경우
+          if (dropdownRect.left + menuWidth > viewportWidth) {
+            // 왼쪽에서도 잘릴 경우 중앙 정렬
+            if (dropdownRect.left - menuWidth < 0) {
+              menu.classList.add('center-aligned');
+            } else {
+              // 오른쪽 정렬
+              menu.classList.add('right-aligned');
+            }
+          }
+        }
+      }
+      
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (menu.classList.contains('show')) {
+          setTimeout(adjustDropdownPosition, 10);
+        }
+      });
+      
+      // 창 크기 변경 시 위치 재조정
+      window.addEventListener('resize', function() {
+        if (menu.classList.contains('show')) {
+          adjustDropdownPosition();
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+
+    // 모바일 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  </header>
+  <main class="main-content">
+    <section class="intro-section">
+      <h1>여러 종목 평단가 계산기</h1>
+      <p>여러 종목의 평균 단가를 한 번에 계산할 수 있습니다.<br>
+      각 종목의 매입가와 수량을 입력하여 전체 포트폴리오의 평균 단가를 확인해보세요.</p>
+    </section>
+    <section class="feature-section">
+      <div class="compound-card" style="max-width:600px;margin:0 auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h2 style="margin: 0; color: #5a7d6c; font-size: 1.3rem;">종목 관리</h2>
+          <button type="button" id="addStockBtn" class="btn" style="padding: 8px 16px; font-size: 0.9rem; margin: 0;">+ 종목 추가</button>
+        </div>
+        
+        <div id="stockList">
+          <!-- 종목 입력 폼들이 여기에 동적으로 추가됩니다 -->
+        </div>
+        
+        <button type="button" id="calculateBtn" class="btn" style="margin-top: 20px;">전체 평단가 계산하기</button>
+      </div>
+      
+      <div id="resultSection" class="compound-result" style="display:none;max-width:600px;margin:0 auto;">
+        <div id="resultSummaryCard" style="background:linear-gradient(90deg,#e6f4ea 60%,#f7f8fa 100%);border-radius:12px;padding:18px 14px 14px 14px;margin-bottom:18px;box-shadow:0 2px 8px rgba(143,183,164,0.10);text-align:center;"></div>
+        <h2>계산 결과</h2>
+        <table class="result-table" id="resultTable">
+          <thead>
+            <tr><th>구분</th><th>값</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 사용 방법 안내 -->
+    <section class="feature-section" style="max-width:600px;margin:32px auto 0 auto;">
+      <div style="background:#f1f5f9;border-radius:10px;padding:18px 14px 12px 14px;color:#374151;font-size:0.98rem;line-height:1.7;box-shadow:0 1px 6px rgba(143,183,164,0.06);">
+        <strong>사용 방법 안내</strong><br>
+        <ul style="margin:10px 0 0 18px;padding:0;">
+          <li><b>종목 추가</b>: "+ 종목 추가" 버튼을 클릭하여 새로운 종목을 추가합니다.</li>
+          <li><b>종목명</b>: 각 종목의 이름을 입력합니다 (예: 삼성전자, SK하이닉스).</li>
+          <li><b>매입가</b>: 해당 종목의 평균 매입 단가를 입력합니다.</li>
+          <li><b>보유 수량</b>: 현재 보유하고 있는 주식 수량을 입력합니다.</li>
+          <li><b>종목 삭제</b>: 각 종목 옆의 "삭제" 버튼으로 불필요한 종목을 제거할 수 있습니다.</li>
+          <li>모든 값을 입력한 후 <b>전체 평단가 계산하기</b> 버튼을 누르면 결과가 표시됩니다.</li>
+        </ul>
+        <div style="margin-top:10px;color:#5a7d6c;font-size:0.97rem;">※ 계산 결과는 참고용이며, 실제 투자 전 전문가 상담을 권장합니다.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div style="margin-bottom:6px;">
+        <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+  </footer>
+  
+  <script>
+    let stockCount = 0;
+
+    // 입력값에 천 단위 콤마 자동 적용
+    function addComma(n) {
+      n = n.replace(/[^\d]/g, '');
+      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
+    }
+    
+    function removeComma(n) {
+      return n.replace(/,/g, '');
+    }
+
+    // 종목 추가 함수
+    function addStock() {
+      stockCount++;
+      const stockList = document.getElementById('stockList');
+      
+      const stockDiv = document.createElement('div');
+      stockDiv.className = 'stock-item';
+      stockDiv.style.cssText = `
+        background: #f8f9fa;
+        border: 1.5px solid #C7D9AD;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 12px;
+        position: relative;
+      `;
+      
+      stockDiv.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <h3 style="margin: 0; color: #5a7d6c; font-size: 1.1rem;">종목 ${stockCount}</h3>
+          <button type="button" class="delete-stock-btn" style="background: #dc3545; color: white; border: none; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; cursor: pointer;">삭제</button>
+        </div>
+        <div class="form-group">
+          <label for="stockName${stockCount}">종목명</label>
+          <input type="text" id="stockName${stockCount}" placeholder="삼성전자" required>
+        </div>
+        <div class="form-group">
+          <label for="purchasePrice${stockCount}">매입가(원)</label>
+          <input type="text" id="purchasePrice${stockCount}" inputmode="numeric" pattern="[0-9,]*" placeholder="70,000" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity${stockCount}">보유 수량(주)</label>
+          <input type="number" id="quantity${stockCount}" min="1" step="1" placeholder="100" required>
+        </div>
+      `;
+      
+      stockList.appendChild(stockDiv);
+      
+      // 삭제 버튼 이벤트 리스너
+      const deleteBtn = stockDiv.querySelector('.delete-stock-btn');
+      deleteBtn.addEventListener('click', function() {
+        stockDiv.remove();
+      });
+      
+      // 매입가 입력에 콤마 자동 적용
+      const purchasePriceInput = stockDiv.querySelector(`#purchasePrice${stockCount}`);
+      purchasePriceInput.addEventListener('input', function(e) {
+        const val = removeComma(e.target.value);
+        e.target.value = addComma(val);
+      });
+    }
+
+    // 초기 종목 추가
+    document.addEventListener('DOMContentLoaded', function() {
+      addStock();
+      addStock(); // 기본적으로 2개 종목 추가
+    });
+
+    // 종목 추가 버튼 이벤트
+    document.getElementById('addStockBtn').addEventListener('click', addStock);
+
+    // 계산 버튼 이벤트
+    document.getElementById('calculateBtn').addEventListener('click', function() {
+      const stockItems = document.querySelectorAll('.stock-item');
+      
+      if (stockItems.length === 0) {
+        alert('최소 1개 이상의 종목을 추가해주세요.');
+        return;
+      }
+      
+      let totalInvestment = 0;
+      let totalQuantity = 0;
+      let stockDetails = [];
+      
+      // 각 종목 데이터 수집
+      stockItems.forEach((item, index) => {
+        const stockName = item.querySelector(`#stockName${index + 1}`)?.value.trim();
+        const purchasePrice = parseFloat(removeComma(item.querySelector(`#purchasePrice${index + 1}`)?.value || '0'));
+        const quantity = parseInt(item.querySelector(`#quantity${index + 1}`)?.value || '0');
+        
+        if (!stockName || isNaN(purchasePrice) || isNaN(quantity) || purchasePrice <= 0 || quantity <= 0) {
+          alert(`종목 ${index + 1}의 모든 값을 올바르게 입력해주세요.`);
+          return;
+        }
+        
+        const investment = purchasePrice * quantity;
+        totalInvestment += investment;
+        totalQuantity += quantity;
+        
+        stockDetails.push({
+          name: stockName,
+          purchasePrice: purchasePrice,
+          quantity: quantity,
+          investment: investment
+        });
+      });
+      
+      if (stockDetails.length === 0) {
+        alert('입력된 종목이 없습니다.');
+        return;
+      }
+      
+      // 전체 평균 단가 계산
+      const overallAveragePrice = totalInvestment / totalQuantity;
+      
+      // 결과 표시
+      const tbody = document.querySelector('#resultTable tbody');
+      tbody.innerHTML = '';
+      
+      // 각 종목별 정보 표시
+      stockDetails.forEach((stock, index) => {
+        tbody.innerHTML += `
+          <tr>
+            <td>종목 ${index + 1} (${stock.name})</td>
+            <td>${stock.purchasePrice.toLocaleString('ko-KR')}원 × ${stock.quantity}주 = ${stock.investment.toLocaleString('ko-KR')}원</td>
+          </tr>
+        `;
+      });
+      
+      // 전체 요약 정보
+      tbody.innerHTML += `<tr style="border-top: 2px solid #88BF78;"><td><strong>총 투자 금액</strong></td><td><strong>${totalInvestment.toLocaleString('ko-KR')}원</strong></td></tr>`;
+      tbody.innerHTML += `<tr><td><strong>총 보유 수량</strong></td><td><strong>${totalQuantity}주</strong></td></tr>`;
+      tbody.innerHTML += `<tr style="background: #e6f4ea;"><td><strong>전체 평균 단가</strong></td><td style="color: #198754; font-size: 1.1rem;"><strong>${overallAveragePrice.toLocaleString('ko-KR')}원</strong></td></tr>`;
+      
+      // 요약 카드 표시
+      let summary = `
+        <div class="summary-block">
+          <div class="summary-title">총 종목 수</div>
+          <div class="summary-value">${stockDetails.length}개</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">총 투자 금액</div>
+          <div class="summary-value">${totalInvestment.toLocaleString('ko-KR')}원</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">총 보유 수량</div>
+          <div class="summary-value">${totalQuantity}주</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">전체 평균 단가</div>
+          <div class="summary-value" style="color: #198754">${overallAveragePrice.toLocaleString('ko-KR')}원</div>
+        </div>
+      `;
+
+      document.getElementById('resultSummaryCard').innerHTML = summary;
+      document.getElementById('resultSection').style.display = 'block';
+      
+      // 결과로 스크롤
+      document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

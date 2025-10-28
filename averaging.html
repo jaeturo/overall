@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>물타기 계산기 | 실생활 모음zip</title>
+  <meta name="description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 실생활 모음zip 물타기 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">실생활 도움zip</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownAveraging">
+          <button type="button" class="dropbtn" id="dropdownBtnAveraging">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuAveraging">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownAveraging">
+          <button type="button" class="dropbtn" id="ageDropdownBtnAveraging">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuAveraging">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+  <style>
+    .dropdown { position: relative; }
+    .dropbtn {
+      cursor: pointer;
+      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 1rem;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
+      transition: background 0.2s, color 0.2s;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      height: 40px;
+    }
+    .dropbtn:hover {
+      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
+      color: #2563eb;
+    }
+    .dropdown-content {
+      display: none !important;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #fff !important;
+      min-width: 220px;
+      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
+      z-index: 20;
+      border-radius: 18px;
+      padding: 18px 0 10px 0;
+      margin: 0;
+      border: 1.5px solid #C7D9AD;
+      flex-direction: column;
+      gap: 0;
+      animation: fadeInCard 0.18s;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    @keyframes fadeInCard {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dropdown-content li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown-content a {
+      color: #000 !important;
+      padding: 16px 28px 14px 28px;
+      text-decoration: none;
+      display: block;
+      font-size: 1.08rem;
+      border-radius: 10px;
+      background: none;
+      margin: 0 10px 8px 10px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .dropdown-content a:hover {
+      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
+      color: #2563eb;
+    }
+    .dropdown-content.show {
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    @media (max-width: 600px) {
+      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
+      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
+      .dropbtn { font-size: 1rem; padding: 10px 14px; }
+    }
+  </style>
+      </ul>
+    </nav>
+  <script>
+    // 드롭다운 클릭 토글 (물타기 계산기 전용)
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('dropdownBtnAveraging');
+      var menu = document.getElementById('dropdownMenuAveraging');
+      var dropdown = document.getElementById('stockDropdownAveraging');
+      
+      // 드롭다운 메뉴 위치 조정 함수
+      function adjustDropdownPosition() {
+        if (menu.classList.contains('show')) {
+          const dropdownRect = dropdown.getBoundingClientRect();
+          const menuWidth = 220; // min-width 값
+          const viewportWidth = window.innerWidth;
+          
+          // 기존 위치 클래스 제거
+          menu.classList.remove('right-aligned', 'center-aligned');
+          
+          // 오른쪽에서 잘릴 경우
+          if (dropdownRect.left + menuWidth > viewportWidth) {
+            // 왼쪽에서도 잘릴 경우 중앙 정렬
+            if (dropdownRect.left - menuWidth < 0) {
+              menu.classList.add('center-aligned');
+            } else {
+              // 오른쪽 정렬
+              menu.classList.add('right-aligned');
+            }
+          }
+        }
+      }
+      
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (menu.classList.contains('show')) {
+          setTimeout(adjustDropdownPosition, 10);
+        }
+      });
+      
+      // 창 크기 변경 시 위치 재조정
+      window.addEventListener('resize', function() {
+        if (menu.classList.contains('show')) {
+          adjustDropdownPosition();
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+
+    // 모바일 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  </header>
+  <main class="main-content">
+    <section class="intro-section">
+      <h1>물타기 계산기</h1>
+      <p>주식 물타기 시 평균 단가와 추가 매수 수량을 계산할 수 있습니다.<br>
+      목표 평균 단가를 설정하고 필요한 매수 수량을 확인해보세요.</p>
+    </section>
+    <section class="feature-section">
+      <div class="compound-card" style="max-width:480px;margin:0 auto;">
+        <form id="averagingForm" autocomplete="off">
+          <div class="form-group">
+            <label for="currentPrice">현재 주가(원)</label>
+            <input type="text" id="currentPrice" name="currentPrice" inputmode="numeric" pattern="[0-9,]*" placeholder="45,000" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="avgPrice">현재 평균 단가(원)</label>
+            <input type="text" id="avgPrice" name="avgPrice" inputmode="numeric" pattern="[0-9,]*" placeholder="50,000" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="currentQuantity">현재 보유 수량(주)</label>
+            <input type="number" id="currentQuantity" name="currentQuantity" min="1" step="1" placeholder="100" required>
+          </div>
+          <div class="form-group">
+            <label for="targetAvgPrice">목표 평균 단가(원)</label>
+            <input type="text" id="targetAvgPrice" name="targetAvgPrice" inputmode="numeric" pattern="[0-9,]*" placeholder="47,000" required autocomplete="off">
+          </div>
+          <button type="submit" class="btn">계산하기</button>
+        </form>
+      </div>
+      <div id="resultSection" class="compound-result" style="display:none;max-width:480px;margin:0 auto;">
+        <div id="resultSummaryCard" style="background:linear-gradient(90deg,#e6f4ea 60%,#f7f8fa 100%);border-radius:12px;padding:18px 14px 14px 14px;margin-bottom:18px;box-shadow:0 2px 8px rgba(143,183,164,0.10);text-align:center;"></div>
+        <h2>계산 결과</h2>
+        <table class="result-table" id="resultTable">
+          <thead>
+            <tr><th>구분</th><th>값</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 사용 방법 안내 -->
+    <section class="feature-section" style="max-width:480px;margin:32px auto 0 auto;">
+      <div style="background:#f1f5f9;border-radius:10px;padding:18px 14px 12px 14px;color:#374151;font-size:0.98rem;line-height:1.7;box-shadow:0 1px 6px rgba(143,183,164,0.06);">
+        <strong>사용 방법 안내</strong><br>
+        <ul style="margin:10px 0 0 18px;padding:0;">
+          <li><b>현재 주가</b>: 현재 시장에서 거래되는 주식 가격을 입력합니다.</li>
+          <li><b>현재 평균 단가</b>: 현재 보유 주식의 평균 매입 단가를 입력합니다.</li>
+          <li><b>현재 보유 수량</b>: 현재 보유하고 있는 주식의 수량을 입력합니다.</li>
+          <li><b>목표 평균 단가</b>: 물타기 후 달성하고 싶은 평균 단가를 입력합니다.</li>
+          <li>모든 값을 입력한 후 <b>계산하기</b> 버튼을 누르면 결과가 아래에 표시됩니다.</li>
+        </ul>
+        <div style="margin-top:10px;color:#b91c1c;font-size:0.97rem;"><b>※ 물타기 주의사항</b><br>
+          <span style="color:#374151;">물타기는 손실을 줄이는 방법이지만, 추가적인 손실 위험도 있습니다.<br>
+          충분한 분석과 여유 자금이 있을 때만 신중하게 진행하세요.</span>
+        </div>
+        <div style="margin-top:8px;color:#5a7d6c;font-size:0.97rem;">※ 계산 결과는 참고용이며, 실제 투자 전 전문가 상담을 권장합니다.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div style="margin-bottom:6px;">
+        <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+  </footer>
+  <script>
+    // 입력값에 천 단위 콤마 자동 적용
+    function addComma(n) {
+      n = n.replace(/[^\d]/g, '');
+      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
+    }
+    function removeComma(n) {
+      return n.replace(/,/g, '');
+    }
+    document.getElementById('currentPrice').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+    document.getElementById('avgPrice').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+    document.getElementById('targetAvgPrice').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+
+    document.getElementById('averagingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const currentPrice = parseFloat(removeComma(document.getElementById('currentPrice').value));
+      const avgPrice = parseFloat(removeComma(document.getElementById('avgPrice').value));
+      const currentQuantity = parseInt(document.getElementById('currentQuantity').value, 10);
+      const targetAvgPrice = parseFloat(removeComma(document.getElementById('targetAvgPrice').value));
+      
+      if (isNaN(currentPrice) || isNaN(avgPrice) || isNaN(currentQuantity) || isNaN(targetAvgPrice) || 
+          currentPrice <= 0 || avgPrice <= 0 || currentQuantity <= 0 || targetAvgPrice <= 0) {
+        alert('모든 값을 올바르게 입력해주세요.');
+        return;
+      }
+
+      // 물타기 계산
+      const currentTotalAmount = avgPrice * currentQuantity;
+      const additionalQuantity = Math.ceil((currentTotalAmount - targetAvgPrice * currentQuantity) / (targetAvgPrice - currentPrice));
+      const newTotalQuantity = currentQuantity + additionalQuantity;
+      const newTotalAmount = currentTotalAmount + (currentPrice * additionalQuantity);
+      const newAvgPrice = newTotalAmount / newTotalQuantity;
+      const additionalAmount = currentPrice * additionalQuantity;
+
+      // 결과 표시
+      const tbody = document.querySelector('#resultTable tbody');
+      tbody.innerHTML = '';
+      
+      tbody.innerHTML += `<tr><td>추가 매수 수량</td><td>${additionalQuantity}주</td></tr>`;
+      tbody.innerHTML += `<tr><td>추가 매수 금액</td><td>${additionalAmount.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>총 보유 수량</td><td>${newTotalQuantity}주</td></tr>`;
+      tbody.innerHTML += `<tr><td>총 투자 금액</td><td>${newTotalAmount.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>새로운 평균 단가</td><td>${newAvgPrice.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>목표 평균 단가</td><td>${targetAvgPrice.toLocaleString('ko-KR')}원</td></tr>`;
+      
+      const priceDiff = Math.abs(newAvgPrice - targetAvgPrice);
+      const isAccurate = priceDiff < 1; // 1원 이내 차이면 정확한 것으로 간주
+      
+      if (isAccurate) {
+        tbody.innerHTML += `<tr><td>계산 정확도</td><td style="color:#198754">✓ 정확함 (${priceDiff.toFixed(2)}원 차이)</td></tr>`;
+      } else {
+        tbody.innerHTML += `<tr><td>계산 정확도</td><td style="color:#dc3545">⚠ 근사치 (${priceDiff.toFixed(2)}원 차이)</td></tr>`;
+      }
+
+      // 요약 카드 표시
+      let summary = `
+        <div class="summary-block">
+          <div class="summary-title">추가 매수 수량</div>
+          <div class="summary-value">${additionalQuantity}주</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">추가 매수 금액</div>
+          <div class="summary-value">${additionalAmount.toLocaleString('ko-KR')}원</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">새로운 평균 단가</div>
+          <div class="summary-value" style="color:${isAccurate ? '#198754' : '#dc3545'}">${newAvgPrice.toLocaleString('ko-KR')}원</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-title">총 보유 수량</div>
+          <div class="summary-value">${newTotalQuantity}주</div>
+        </div>
+      `;
+
+      document.getElementById('resultSummaryCard').innerHTML = summary;
+      document.getElementById('resultSection').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

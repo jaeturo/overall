@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미국주식 양도세 계산기 | 실생활 모음zip</title>
+  <meta name="description" content="미국주식 매매 시 발생하는 양도소득세와 증권거래세를 계산하는 실생활 모음zip 미국주식 양도세 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">실생활 도움zip</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownUSTax">
+          <button type="button" class="dropbtn" id="dropdownBtnUSTax">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuUSTax">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownUSTax">
+          <button type="button" class="dropbtn" id="ageDropdownBtnUSTax">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuUSTax">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  <script>
+    // 드롭다운 클릭 토글 (미국주식 양도세 계산기 전용)
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.getElementById('dropdownBtnUSTax');
+      var menu = document.getElementById('dropdownMenuUSTax');
+      var dropdown = document.getElementById('stockDropdownUSTax');
+      
+      // 드롭다운 메뉴 위치 조정 함수
+      function adjustDropdownPosition() {
+        if (menu.classList.contains('show')) {
+          const dropdownRect = dropdown.getBoundingClientRect();
+          const menuWidth = 220; // min-width 값
+          const viewportWidth = window.innerWidth;
+          
+          // 기존 위치 클래스 제거
+          menu.classList.remove('right-aligned', 'center-aligned');
+          
+          // 오른쪽에서 잘릴 경우
+          if (dropdownRect.left + menuWidth > viewportWidth) {
+            // 왼쪽에서도 잘릴 경우 중앙 정렬
+            if (dropdownRect.left - menuWidth < 0) {
+              menu.classList.add('center-aligned');
+            } else {
+              // 오른쪽 정렬
+              menu.classList.add('right-aligned');
+            }
+          }
+        }
+      }
+      
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('show');
+        
+        // 메뉴가 열릴 때 위치 조정
+        if (menu.classList.contains('show')) {
+          setTimeout(adjustDropdownPosition, 10);
+        }
+      });
+      
+      // 창 크기 변경 시 위치 재조정
+      window.addEventListener('resize', function() {
+        if (menu.classList.contains('show')) {
+          adjustDropdownPosition();
+        }
+      });
+      
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    });
+
+    // 모바일 햄버거 메뉴 토글
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // 메뉴 링크 클릭 시 메뉴 닫기
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+  </header>
+  <main class="main-content">
+    <section class="intro-section">
+      <h1>미국주식 양도세 계산기</h1>
+      <p>미국주식 매매 시 발생하는 양도소득세와 증권거래세를 간편하게 계산할 수 있습니다.</p>
+    </section>
+    <section class="feature-section">
+      <div class="compound-card" style="max-width:480px;margin:0 auto;">
+        <form id="usTaxForm" autocomplete="off">
+          <div class="form-group">
+            <label for="totalSellAmount">1년간 총 매도금액(원화)</label>
+            <input type="text" id="totalSellAmount" name="totalSellAmount" inputmode="numeric" pattern="[0-9,]*" placeholder="10,000,000" required autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label for="totalPurchaseAmount">매도한 해외주식을 매수한 금액(원화)</label>
+            <input type="text" id="totalPurchaseAmount" name="totalPurchaseAmount" inputmode="numeric" pattern="[0-9,]*" placeholder="8,000,000" required autocomplete="off">
+          </div>
+          <button type="submit" class="btn">계산하기</button>
+        </form>
+      </div>
+      <div id="resultSection" class="compound-result" style="display:none;max-width:480px;margin:0 auto;">
+        <div id="resultSummaryCard" style="background:linear-gradient(90deg,#e6f4ea 60%,#f7f8fa 100%);border-radius:12px;padding:18px 14px 14px 14px;margin-bottom:18px;box-shadow:0 2px 8px rgba(143,183,164,0.10);text-align:center;"></div>
+        <h2>5월에 내야 할 양도소득세는?</h2>
+        <table class="result-table" id="resultTable">
+          <thead>
+            <tr><th>구분</th><th>값</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 사용 방법 안내 -->
+    <section class="feature-section" style="max-width:480px;margin:32px auto 0 auto;">
+      <div style="background:#f1f5f9;border-radius:10px;padding:18px 14px 12px 14px;color:#374151;font-size:0.98rem;line-height:1.7;box-shadow:0 1px 6px rgba(143,183,164,0.06);">
+        <strong>사용 방법 안내</strong><br>
+        <ul style="margin:10px 0 0 18px;padding:0;">
+          <li><b>1년간 총 매도금액</b>: 해당 연도에 매도한 모든 해외주식의 총 금액을 원화로 입력합니다.</li>
+          <li><b>매수금액</b>: 매도한 해외주식을 매수할 때 지불한 총 금액을 원화로 입력합니다.</li>
+          <li>모든 값을 입력한 후 <b>계산하기</b> 버튼을 누르면 결과가 아래에 표시됩니다.</li>
+        </ul>
+        <div style="margin-top:10px;color:#b91c1c;font-size:0.97rem;"><b>※ 미국주식 양도세 계산 공식</b><br>
+          <span style="color:#374151;">양도소득 = 매도금액 - 매수금액<br>
+          과세소득 = 양도소득 - 신고공제액(250만원)<br>
+          양도소득세 = 과세소득 × 20% (양도세) + 과세소득 × 2% (지방세)</span>
+        </div>
+        <div style="margin-top:8px;color:#5a7d6c;font-size:0.97rem;">※ 계산 결과는 참고용이며, 실제 세무 신고 전 전문가 상담을 권장합니다.</div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div style="margin-bottom:6px;">
+        <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+  </footer>
+  <script>
+    // 입력값에 천 단위 콤마 자동 적용
+    function addComma(n) {
+      n = n.replace(/[^\d]/g, '');
+      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
+    }
+    function removeComma(n) {
+      return n.replace(/,/g, '');
+    }
+    document.getElementById('totalSellAmount').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+    document.getElementById('totalPurchaseAmount').addEventListener('input', function(e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+
+    document.getElementById('usTaxForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const totalSellAmount = parseFloat(removeComma(document.getElementById('totalSellAmount').value));
+      const totalPurchaseAmount = parseFloat(removeComma(document.getElementById('totalPurchaseAmount').value));
+      
+      if (isNaN(totalSellAmount) || isNaN(totalPurchaseAmount) || 
+          totalSellAmount <= 0 || totalPurchaseAmount <= 0) {
+        alert('모든 값을 올바르게 입력해주세요.');
+        return;
+      }
+
+      // 택슬리 기준 계산
+      const capitalGain = totalSellAmount - totalPurchaseAmount;
+      const deductionAmount = 2500000; // 신고 공제액 250만원
+      const taxableIncome = Math.max(0, capitalGain - deductionAmount);
+      
+      // 양도소득세 계산 (양도세 20% + 지방세 2% = 총 22%)
+      const capitalGainTax = taxableIncome * 0.20; // 양도세 20%
+      const localTax = taxableIncome * 0.02; // 지방세 2%
+      const totalTax = capitalGainTax + localTax;
+
+      // 결과 표시
+      const tbody = document.querySelector('#resultTable tbody');
+      tbody.innerHTML = '';
+      
+      tbody.innerHTML += `<tr><td>1년간 총 매도금액(입력값)</td><td>${totalSellAmount.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>매수금액(입력값)</td><td>${totalPurchaseAmount.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>소득금액(매도금액 - 매수금액)</td><td style="color:${capitalGain >= 0 ? '#198754' : '#dc3545'}">${capitalGain >= 0 ? '+' : ''}${capitalGain.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>신고 공제액</td><td>${deductionAmount.toLocaleString('ko-KR')}원</td></tr>`;
+      tbody.innerHTML += `<tr><td>양도소득세(양도세 20% + 지방세 2%)</td><td>${totalTax.toLocaleString('ko-KR')}원</td></tr>`;
+      
+      // 요약 카드 표시
+      const summary = `
+        <div class="summary-block">
+          <div class="summary-title">5월에 내야 할 양도소득세는?</div>
+          <div class="summary-value">${totalTax.toLocaleString('ko-KR')}원</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-label">양도소득</div>
+          <div class="summary-value ${capitalGain >= 0 ? 'positive' : 'negative'}">${capitalGain >= 0 ? '+' : ''}${capitalGain.toLocaleString('ko-KR')}원</div>
+        </div>
+        <div class="summary-block">
+          <div class="summary-label">과세소득</div>
+          <div class="summary-value">${taxableIncome.toLocaleString('ko-KR')}원</div>
+        </div>
+      `;
+      document.getElementById('resultSummaryCard').innerHTML = summary;
+      document.getElementById('resultSection').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
