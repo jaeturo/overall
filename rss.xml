@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>만능도구 모음zip</title>
+    <link>https://toolzip.netlify.app/</link>
+    <description>실생활에 도움되는 계산기와 검사기 모음</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0900</lastBuildDate>
+    <generator>static-rss</generator>
+
+    <item>
+      <title>메인</title>
+      <link>https://toolzip.netlify.app/</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>만능도구 모음zip 메인 페이지</description>
+    </item>
+
+    <item>
+      <title>복리 계산기</title>
+      <link>https://toolzip.netlify.app/compound.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/compound.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>원금, 이율, 기간, 월 적립액 기반 복리 계산</description>
+    </item>
+
+    <item>
+      <title>배당률 계산기</title>
+      <link>https://toolzip.netlify.app/dividend.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/dividend.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>배당금, 배당수익률, 세후 수익률 계산</description>
+    </item>
+
+    <item>
+      <title>주식 수익률 계산기</title>
+      <link>https://toolzip.netlify.app/profit.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/profit.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>매입가, 현재가, 수량으로 수익률 계산</description>
+    </item>
+
+    <item>
+      <title>물타기 계산기</title>
+      <link>https://toolzip.netlify.app/averaging.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/averaging.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>추가 매수 시 평균 단가와 수량 계산</description>
+    </item>
+
+    <item>
+      <title>여러 종목 평단가 계산기</title>
+      <link>https://toolzip.netlify.app/multi-average.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/multi-average.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>복수 종목의 평균 단가 계산</description>
+    </item>
+
+    <item>
+      <title>미국주식 양도세 계산기</title>
+      <link>https://toolzip.netlify.app/us-tax-calculator.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/us-tax-calculator.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>미국주식 양도소득세 계산</description>
+    </item>
+
+    <item>
+      <title>미국주식 공제 혜택 계산기</title>
+      <link>https://toolzip.netlify.app/us-deduction-calculator.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/us-deduction-calculator.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>연 250만원 공제 혜택 활용 수익 계산</description>
+    </item>
+
+    <item>
+      <title>나이 계산기</title>
+      <link>https://toolzip.netlify.app/age-calculator.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/age-calculator.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>만 나이, 세는 나이, 연 나이 계산</description>
+    </item>
+
+    <item>
+      <title>띠 계산기</title>
+      <link>https://toolzip.netlify.app/zodiac-calculator.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/zodiac-calculator.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>출생년도 띠 계산</description>
+    </item>
+
+    <item>
+      <title>띠별 궁합</title>
+      <link>https://toolzip.netlify.app/zodiac-compatibility.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/zodiac-compatibility.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>띠별 궁합 상대 평가 결과 제공</description>
+    </item>
+
+    <item>
+      <title>서비스 이용약관</title>
+      <link>https://toolzip.netlify.app/terms.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/terms.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>만능도구 모음zip 이용약관</description>
+    </item>
+  </channel>
+</rss>

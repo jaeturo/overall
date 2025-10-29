@@ -6,8 +6,64 @@
   <title>물타기 계산기 | 만능도구 모음zip</title>
   <meta name="description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 만능도구 모음zip 물타기 계산기입니다.">
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- SEO -->
+  <meta name="title" content="물타기 계산기 | 만능도구 모음zip">
+  <meta name="keywords" content="물타기 계산기, 평균 단가, 추가 매수, 주식 계산">
+  <meta name="author" content="만능도구 모음zip">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="물타기 계산기 | 만능도구 모음zip">
+  <meta property="og:description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 만능도구 모음zip 물타기 계산기입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/averaging.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="만능도구 모음zip">
+  <meta property="og:site_name" content="만능도구 모음zip">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="물타기 계산기 | 만능도구 모음zip">
+  <meta name="twitter:description" content="주식 물타기 시 평균 단가와 추가 매수 수량을 계산하는 만능도구 모음zip 물타기 계산기입니다.">
+  <meta name="twitter:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+
+  <!-- UX/SEO extras -->
+  <meta name="language" content="ko">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://toolzip.netlify.app/averaging.html">
+  <meta name="google-site-verification" content="_C8bm90OD05exvag-QZWkOA-amh0ZPwf-Z7hYkWUe-w">
+  <meta name="msvalidate.01" content="8F447B4B3698F7695A7AD4637D6271D8">
+  <meta name="naver-site-verification" content="609fe238310a3be61d608b20f341d43dfa668496">
+
+  <!-- PWA/browser -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="application-name" content="만능도구 모음zip">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="물타기 계산기">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K42GDRNW');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
+     crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <header class="header">
     <nav class="navbar">
       <div class="logo">만능도구 모음zip</div>
@@ -40,213 +96,14 @@
         <li class="nav-item dropdown" id="compatibilityDropdownAveraging">
           <button type="button" class="dropbtn" id="compatibilityDropdownBtnAveraging">💕 궁합</button>
           <ul class="dropdown-content" id="compatibilityDropdownMenuAveraging">
-            <li><a href="zodiac-compatibility.html">띠별 궁합 계산기</a></li>
+            <li><a href="zodiac-compatibility.html">띠별 궁합</a></li>
           </ul>
         </li>
         <!-- 기능별 메뉴는 추후 추가 -->
-  <style>
-    .dropdown { position: relative; }
-    .dropbtn {
-      cursor: pointer;
-      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 1rem;
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
-      transition: background 0.2s, color 0.2s;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      height: 40px;
-    }
-    .dropbtn:hover {
-      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
-      color: #2563eb;
-    }
-    .dropdown-content {
-      display: none !important;
-      position: absolute;
-      top: 110%;
-      left: 0;
-      background: #fff !important;
-      min-width: 220px;
-      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
-      z-index: 20;
-      border-radius: 18px;
-      padding: 18px 0 10px 0;
-      margin: 0;
-      border: 1.5px solid #C7D9AD;
-      flex-direction: column;
-      gap: 0;
-      animation: fadeInCard 0.18s;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    @keyframes fadeInCard {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .dropdown-content li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .dropdown-content a {
-      color: #000 !important;
-      padding: 16px 28px 14px 28px;
-      text-decoration: none;
-      display: block;
-      font-size: 1.08rem;
-      border-radius: 10px;
-      background: none;
-      margin: 0 10px 8px 10px;
-      font-weight: 500;
-      transition: background 0.15s, color 0.15s;
-      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    .dropdown-content a:hover {
-      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
-      color: #2563eb;
-    }
-    .dropdown-content.show {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-    @media (max-width: 600px) {
-      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
-      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
-      .dropbtn { font-size: 1rem; padding: 10px 14px; }
-    }
-  </style>
       </ul>
     </nav>
-  <script>
-    // 드롭다운 클릭 토글
-    document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.getElementById('dropdownBtnAveraging');
-      var menu = document.getElementById('dropdownMenuAveraging');
-      var dropdown = document.getElementById('stockDropdownAveraging');
-      
-      var ageBtn = document.getElementById('ageDropdownBtnAveraging');
-      var ageMenu = document.getElementById('ageDropdownMenuAveraging');
-      var ageDropdown = document.getElementById('ageDropdownAveraging');
-      
-      var compatibilityBtn = document.getElementById('compatibilityDropdownBtnAveraging');
-      var compatibilityMenu = document.getElementById('compatibilityDropdownMenuAveraging');
-      var compatibilityDropdown = document.getElementById('compatibilityDropdownAveraging');
-      
-      // 드롭다운 메뉴 위치 조정 함수
-      function adjustDropdownPosition(btn, menu, dropdown) {
-        if (menu.classList.contains('show')) {
-          const dropdownRect = dropdown.getBoundingClientRect();
-          const menuWidth = 220; // min-width 값
-          const viewportWidth = window.innerWidth;
-          
-          // 기존 위치 클래스 제거
-          menu.classList.remove('right-aligned', 'center-aligned');
-          
-          // 오른쪽에서 잘릴 경우
-          if (dropdownRect.left + menuWidth > viewportWidth) {
-            // 왼쪽에서도 잘릴 경우 중앙 정렬
-            if (dropdownRect.left - menuWidth < 0) {
-              menu.classList.add('center-aligned');
-            } else {
-              // 오른쪽 정렬
-              menu.classList.add('right-aligned');
-            }
-          }
-        }
-      }
-      
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        menu.classList.toggle('show');
-        ageMenu.classList.remove('show');
-        compatibilityMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (menu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(btn, menu, dropdown), 10);
-        }
-      });
-      
-      ageBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        ageMenu.classList.toggle('show');
-        menu.classList.remove('show');
-        compatibilityMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (ageMenu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(ageBtn, ageMenu, ageDropdown), 10);
-        }
-      });
-      
-      compatibilityBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        compatibilityMenu.classList.toggle('show');
-        menu.classList.remove('show');
-        ageMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (compatibilityMenu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown), 10);
-        }
-      });
-      
-      // 창 크기 변경 시 위치 재조정
-      window.addEventListener('resize', function() {
-        if (menu.classList.contains('show')) {
-          adjustDropdownPosition(btn, menu, dropdown);
-        }
-        if (ageMenu.classList.contains('show')) {
-          adjustDropdownPosition(ageBtn, ageMenu, ageDropdown);
-        }
-        if (compatibilityMenu.classList.contains('show')) {
-          adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown);
-        }
-      });
-      
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          menu.classList.remove('show');
-        }
-        if (!ageDropdown.contains(e.target)) {
-          ageMenu.classList.remove('show');
-        }
-        if (!compatibilityDropdown.contains(e.target)) {
-          compatibilityMenu.classList.remove('show');
-        }
-      });
-    });
-
-    // 모바일 햄버거 메뉴 토글
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-      });
-      
-      // 메뉴 링크 클릭 시 메뉴 닫기
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-        });
-      });
-    });
-  </script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/main.js"></script>
   </header>
   <main class="main-content">
     <section class="intro-section">
@@ -254,6 +111,14 @@
       <p>주식 물타기 시 평균 단가와 추가 매수 수량을 계산할 수 있습니다.<br>
       목표 평균 단가를 설정하고 필요한 매수 수량을 확인해보세요.</p>
     </section>
+    <!-- 카카오애드핏 광고 -->
+    <div style="display:flex;justify-content:center;margin:30px 0;">
+      <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit = "DAN-fousInY12EGeI3vh"
+      data-ad-width = "300"
+      data-ad-height = "250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
     <section class="feature-section">
       <div class="compound-card" style="max-width:480px;margin:0 auto;">
         <form id="averagingForm" autocomplete="off">
@@ -311,36 +176,38 @@
     <div style="margin-bottom:6px;">
         <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
     </div>
-    <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
+    <div class="footer-copy">©2025 만능도구 모음zip. All rights reserved.</div>
   </footer>
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank" data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank" data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
   <script>
-    // 입력값에 천 단위 콤마 자동 적용
-    function addComma(n) {
-      n = n.replace(/[^\d]/g, '');
-      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
-    }
-    function removeComma(n) {
-      return n.replace(/,/g, '');
-    }
+    // 입력값에 천 단위 콤마 자동 적용 (utils 사용)
     document.getElementById('currentPrice').addEventListener('input', function(e) {
-      const val = removeComma(e.target.value);
-      e.target.value = addComma(val);
+      const val = utils.removeComma(e.target.value);
+      e.target.value = utils.addComma(val);
     });
     document.getElementById('avgPrice').addEventListener('input', function(e) {
-      const val = removeComma(e.target.value);
-      e.target.value = addComma(val);
+      const val = utils.removeComma(e.target.value);
+      e.target.value = utils.addComma(val);
     });
     document.getElementById('targetAvgPrice').addEventListener('input', function(e) {
-      const val = removeComma(e.target.value);
-      e.target.value = addComma(val);
+      const val = utils.removeComma(e.target.value);
+      e.target.value = utils.addComma(val);
     });
 
     document.getElementById('averagingForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const currentPrice = parseFloat(removeComma(document.getElementById('currentPrice').value));
-      const avgPrice = parseFloat(removeComma(document.getElementById('avgPrice').value));
+      const currentPrice = parseFloat(utils.removeComma(document.getElementById('currentPrice').value));
+      const avgPrice = parseFloat(utils.removeComma(document.getElementById('avgPrice').value));
       const currentQuantity = parseInt(document.getElementById('currentQuantity').value, 10);
-      const targetAvgPrice = parseFloat(removeComma(document.getElementById('targetAvgPrice').value));
+      const targetAvgPrice = parseFloat(utils.removeComma(document.getElementById('targetAvgPrice').value));
       
       if (isNaN(currentPrice) || isNaN(avgPrice) || isNaN(currentQuantity) || isNaN(targetAvgPrice) || 
           currentPrice <= 0 || avgPrice <= 0 || currentQuantity <= 0 || targetAvgPrice <= 0) {
@@ -399,6 +266,14 @@
       document.getElementById('resultSummaryCard').innerHTML = summary;
       document.getElementById('resultSection').style.display = 'block';
     });
+  </script>
+  <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+  <script type="text/javascript">
+  if(!wcs_add) var wcs_add = {};
+  wcs_add["wa"] = "15bdb2c92e75400";
+  if(window.wcs) {
+    wcs_do();
+  }
   </script>
 </body>
 </html>
