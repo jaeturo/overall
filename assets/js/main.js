@@ -6,9 +6,11 @@
     function closeAllDropdowns(except) {
       dropdowns.forEach(function(dd) {
         var content = dd.querySelector('.dropdown-content');
+        var btn = dd.querySelector('.dropbtn');
         if (!content) return;
         if (except && dd === except) return;
         content.classList.remove('show');
+        if (btn) btn.classList.remove('active');
       });
     }
 
@@ -42,6 +44,7 @@
         closeAllDropdowns();
         if (willShow) {
           content.classList.add('show');
+          btn.classList.add('active');
           setTimeout(function() { adjustDropdownPosition(dd); }, 10);
         }
       });

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부동산 취득세 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="부동산 취득세 계산기에서 취득가액, 주택 보유 수, 생애 최초 여부를 입력하여 취득세와 부가세를 빠르게 계산해보세요.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta property="og:title" content="부동산 취득세 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="취득가액과 보유 주택 수, 생애 최초 여부를 바탕으로 예상 취득세·지방교육세·농어촌특별세를 계산합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/real-estate-acquisition-tax-calculator.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
+  <meta property="og:locale" content="ko_KR">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdown">
+          <button type="button" class="dropbtn" id="laborDropdownBtn">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenu">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdown">
+          <button type="button" class="dropbtn" id="loanDropdownBtn">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenu">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdown">
+          <button type="button" class="dropbtn" id="taxDropdownBtn">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenu">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdown">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtn">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenu">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdown">
+          <button type="button" class="dropbtn" id="dateDropdownBtn">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenu">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdown">
+          <button type="button" class="dropbtn" id="healthDropdownBtn">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenu">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>부동산 취득세 계산기</h1>
+        <p class="hero-copy">취득가액, 보유 주택 수, 생애 최초 여부 등을 입력하면 취득세와 지방교육세, 농어촌특별세를 한 번에 계산합니다. 예상 세부담을 미리 확인하고 자금 계획을 세워
+          보세요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>취득가액</b>: 부동산을 취득(매입)할 금액을 입력합니다.</li>
+          <li><b>용도</b>: 주택인지 기타 부동산인지 선택합니다.</li>
+          <li><b>보유 주택 수</b>: 주택 취득 시 현재 보유 중인 주택 수를 선택합니다.</li>
+          <li><b>생애 최초 주택</b>: 생애 최초 주택 취득에 해당하면 체크합니다(일반 주택, 6억 이하 가정).</li>
+          <li>모든 값을 입력한 뒤 <b>취득세 계산하기</b> 버튼을 누르면 결과가 표시됩니다.</li>
+        </ul>
+        <p class="info-card__caption info-card__caption--warning"><strong>※ 참고</strong><br>
+          실제 취득세율은 조정대상지역 여부, 주택 유형, 면적, 법령 개정 등에 따라 달라질 수 있습니다. 본 계산기는 단순화된 예시로 참고용으로만 이용하세요.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--wide">
+          <form id="acquisitionTaxForm" autocomplete="off">
+            <div class="form-group">
+              <label for="price">취득가액(₩)</label>
+              <input type="text" id="price" inputmode="numeric" pattern="[0-9,]*" placeholder="500,000,000" required>
+            </div>
+            <div class="form-group">
+              <label for="propertyType">용도</label>
+              <select id="propertyType" required>
+                <option value="residential" selected>주택</option>
+                <option value="nonResidential">비주택(상가·토지 등)</option>
+              </select>
+            </div>
+            <div class="form-group" id="homeCountGroup">
+              <label for="homeCount">현재 보유 주택 수</label>
+              <select id="homeCount" required>
+                <option value="one">1주택</option>
+                <option value="two">2주택</option>
+                <option value="three">3주택 이상</option>
+              </select>
+            </div>
+            <div class="form-group form-group--inline" id="firstHomeGroup">
+              <label for="firstHomeCheck">생애 최초 주택 취득</label>
+              <div class="input-inline">
+                <input type="checkbox" id="firstHomeCheck">
+                <span style="align-self:center;color:var(--color-text-muted);font-size:0.92rem;">(주택, 6억 이하 가정)</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">취득세 계산하기</button>
+          </form>
+        </div>
+
+        <div id="resultSection" class="compound-result compound-result--wide" style="display:none;">
+          <div id="resultSummaryCard"></div>
+          <h2>예상 취득세 결과</h2>
+          <table class="result-table" id="resultTable">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>금액(₩)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script>
+    const numberFormatter = new Intl.NumberFormat('ko-KR');
+
+    function parseCurrency(value) {
+      if (!value) return 0;
+      return parseInt(String(value).replace(/[^\d]/g, ''), 10) || 0;
+    }
+
+    function formatCurrency(value) {
+      return numberFormatter.format(Math.round(value)) + '원';
+    }
+
+    function bindCurrencyInput(inputId) {
+      const element = document.getElementById(inputId);
+      if (!element) return;
+      element.addEventListener('input', (event) => {
+        const raw = parseCurrency(event.target.value);
+        event.target.value = raw ? numberFormatter.format(raw) : '';
+      });
+    }
+
+    bindCurrencyInput('price');
+
+    const propertyTypeEl = document.getElementById('propertyType');
+    const homeCountGroup = document.getElementById('homeCountGroup');
+    const firstHomeGroup = document.getElementById('firstHomeGroup');
+
+    propertyTypeEl.addEventListener('change', () => {
+      const isResidential = propertyTypeEl.value === 'residential';
+      homeCountGroup.style.display = isResidential ? '' : 'none';
+      firstHomeGroup.style.display = isResidential ? '' : 'none';
+    });
+
+    document.getElementById('acquisitionTaxForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const price = document.getElementById('price').value;
+      const propertyType = propertyTypeEl.value;
+      const homeCount = document.getElementById('homeCount').value;
+      const isFirstHome = document.getElementById('firstHomeCheck').checked;
+
+      try {
+        const response = await fetch('/.netlify/functions/calculateAcquisitionTax', {
+          method: 'POST',
+          body: JSON.stringify({ price, propertyType, homeCount, isFirstHome }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (!response.ok) throw new Error('Calculation failed');
+        const data = await response.json();
+
+        const tbody = document.querySelector('#resultTable tbody');
+        tbody.innerHTML = '';
+
+        const rows = [
+          ['취득가액', formatCurrency(data.price)],
+          ['기본 취득세율', (data.baseRate * 100).toFixed(2) + '%'],
+          ['중과세율', (data.surchargeRate * 100).toFixed(2) + '%'],
+          ['취득세', formatCurrency(data.acquisitionTax)],
+          ['지방교육세(10%)', formatCurrency(data.localEducationTax)],
+          ['농어촌특별세(일부 주택)', formatCurrency(data.specialTax)],
+          ['총 예상 세액', formatCurrency(data.totalTax)]
+        ];
+
+        rows.forEach(([label, value]) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+          tbody.appendChild(tr);
+        });
+
+        const summary = `
+            <div class="summary-block">
+            <div class="summary-title">총 취득 관련 세액</div>
+            <div class="summary-value">${formatCurrency(data.totalTax)}</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">적용 세율(총)</div>
+            <div class="summary-value">${(data.totalRate * 100).toFixed(2)}%</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">취득세</div>
+            <div class="summary-value">${formatCurrency(data.acquisitionTax)}</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">부가세(지방교육세·특별세)</div>
+            <div class="summary-value">${formatCurrency(data.localEducationTax + data.specialTax)}</div>
+            </div>
+        `;
+
+        document.getElementById('resultSummaryCard').innerHTML = summary;
+        document.getElementById('resultSection').style.display = 'block';
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      } catch (error) {
+        console.error(error);
+        alert('계산 중 오류가 발생했습니다.');
+      }
+    });
+  </script>
+</body>
+
+</html>

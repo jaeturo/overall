@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://toolzip.netlify.app/loan-calculator.html">
+  <link rel="canonical" href="https://toolzip.netlify.app/loan-calculator.html">
+  <title>원리금·원금 균등상환 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="대출 원금, 금리, 상환 기간을 입력하면 월 상환액을 계산하는 원리금·원금 균등상환 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- SEO -->
+  <meta name="title" content="원리금·원금 균등상환 계산기 | 계산기 모음zip">
+  <meta name="keywords" content="원리금균등 계산기, 원금균등 계산기, 월 상환액, 대출 이자, 대출 계산기">
+  <meta name="author" content="계산기 모음zip">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="원리금·원금 균등상환 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="대출 원금, 금리, 상환 기간을 입력하면 월 상환액을 계산하는 원리금·원금 균등상환 계산기입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/loan-calculator.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="원리금·원금 균등상환 계산기 | 계산기 모음zip">
+  <meta name="twitter:description" content="대출 원금, 금리, 상환 기간을 입력하면 월 상환액을 계산하는 원리금·원금 균등상환 계산기입니다.">
+  <meta name="twitter:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+
+  <!-- UX/SEO extras -->
+  <meta name="language" content="ko">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://toolzip.netlify.app/loan-calculator.html">
+  <meta name="google-site-verification" content="_C8bm90OD05exvag-QZWkOA-amh0ZPwf-Z7hYkWUe-w">
+  <meta name="msvalidate.01" content="8F447B4B3698F7695A7AD4637D6271D8">
+  <meta name="naver-site-verification" content="609fe238310a3be61d608b20f341d43dfa668496">
+
+  <!-- PWA/browser -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="application-name" content="계산기 모음zip">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="원리금·원금 균등상환 계산기">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K42GDRNW');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdown">
+          <button type="button" class="dropbtn" id="laborDropdownBtn">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenu">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdown">
+          <button type="button" class="dropbtn" id="loanDropdownBtn">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenu">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdown">
+          <button type="button" class="dropbtn" id="taxDropdownBtn">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenu">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdown">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtn">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenu">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdown">
+          <button type="button" class="dropbtn" id="dateDropdownBtn">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenu">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdown">
+          <button type="button" class="dropbtn" id="healthDropdownBtn">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenu">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>원리금·원금 균등상환 계산기</h1>
+        <p class="hero-copy">대출 원금, 금리, 상환 기간을 입력하면 월 상환액을 비교 계산합니다. 원리금균등과 원금균등 상환 방식을 모두 지원해 상환 계획을 쉽게 세울 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>상환 방식</b>: 원리금균등상환 또는 원금균등상환을 선택하세요.</li>
+          <li><b>대출 원금</b>: 대출받을 금액을 입력합니다.</li>
+          <li><b>연이율</b>: 연간 이자율(%)을 입력합니다.</li>
+          <li><b>상환 기간</b>: 년 또는 개월 단위로 상환 기간을 입력합니다.</li>
+          <li>모든 값을 입력한 후 <b>계산하기</b> 버튼을 누르면 결과가 아래에 표시됩니다.</li>
+        </ul>
+        <p class="info-card__caption">※ 원리금균등상환은 매월 동일한 금액을, 원금균등상환은 매월 동일한 원금과 잔액에 따른 이자를 상환합니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card">
+          <div class="currency-tabs">
+            <button type="button" id="tabEqual" class="tab-btn active">원리금균등상환</button>
+            <button type="button" id="tabPrincipal" class="tab-btn">원금균등상환</button>
+          </div>
+          <form id="loanForm" autocomplete="off">
+            <div class="form-group">
+              <label for="principal">대출 원금(₩)</label>
+              <input type="text" id="principal" name="principal" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="100,000,000" required autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="rate">연이율(%)</label>
+              <input type="number" id="rate" name="rate" min="0" max="100" step="0.01" placeholder="3.5" required>
+            </div>
+            <div class="form-group form-group--inline">
+              <label for="years">상환 기간</label>
+              <div class="input-inline">
+                <select id="periodType" name="periodType" required>
+                  <option value="year">년</option>
+                  <option value="month" selected>개월</option>
+                </select>
+                <input type="number" id="years" name="years" min="1" max="100" step="1" placeholder="36" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">계산하기</button>
+          </form>
+        </div>
+        <div id="resultSection" class="compound-result" style="display:none;">
+          <div id="resultSummaryCard"></div>
+          <h2 id="resultTitle">계산 결과</h2>
+          <table class="result-table" id="resultTable">
+            <thead>
+              <tr id="resultTableHeader"></tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+  <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+  <script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "15bdb2c92e75400";
+    if (window.wcs) {
+      wcs_do();
+    }
+  </script>
+  <script>
+    // 입력값에 천 단위 콤마 자동 적용
+    function addComma(n) {
+      n = n.replace(/[^\d]/g, '');
+      return n ? parseInt(n, 10).toLocaleString('ko-KR') : '';
+    }
+    function removeComma(n) {
+      return n.replace(/,/g, '');
+    }
+    document.getElementById('principal').addEventListener('input', function (e) {
+      const val = removeComma(e.target.value);
+      e.target.value = addComma(val);
+    });
+
+    let currentType = 'equal'; // equal: 원리금균등, principal: 원금균등
+
+    document.getElementById('tabEqual').addEventListener('click', function () {
+      currentType = 'equal';
+      this.classList.add('active');
+      document.getElementById('tabPrincipal').classList.remove('active');
+    });
+
+    document.getElementById('tabPrincipal').addEventListener('click', function () {
+      currentType = 'principal';
+      this.classList.add('active');
+      document.getElementById('tabEqual').classList.remove('active');
+    });
+
+    document.getElementById('loanForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const principal = document.getElementById('principal').value;
+      const rate = document.getElementById('rate').value;
+      const years = document.getElementById('years').value;
+      const periodType = document.getElementById('periodType').value;
+
+      if (!principal || !rate || !years) {
+        alert('모든 값을 올바르게 입력해주세요.');
+        return;
+      }
+
+      try {
+        const response = await fetch('/.netlify/functions/calculateLoan', {
+          method: 'POST',
+          body: JSON.stringify({ principal, rate, years, periodType, type: currentType }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (!response.ok) throw new Error('Calculation failed');
+        const data = await response.json();
+        const summary = data.summary;
+        const schedule = data.schedule;
+
+        const tbody = document.querySelector('#resultTable tbody');
+        const theadTr = document.getElementById('resultTableHeader');
+        tbody.innerHTML = '';
+
+        theadTr.innerHTML = '<th>회차</th><th>상환액(₩)</th><th>원금(₩)</th><th>이자(₩)</th><th>잔여 원금(₩)</th>';
+
+        schedule.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.round}</td>
+            <td>${row.payment.toLocaleString('ko-KR')}</td>
+            <td>${row.principalPayment.toLocaleString('ko-KR')}</td>
+            <td>${row.interest.toLocaleString('ko-KR')}</td>
+            <td>${row.remainingPrincipal.toLocaleString('ko-KR')}</td>
+            `;
+          tbody.appendChild(tr);
+        });
+
+        let summaryHtml = '';
+        if (data.type === 'equal') {
+          summaryHtml = `
+            <div class="summary-block">
+                <div class="summary-title">월 상환액</div>
+                <div class="summary-value">${summary.monthlyPayment.toLocaleString('ko-KR')}원</div>
+            </div>
+            `;
+        } else {
+          summaryHtml = `
+            <div class="summary-block">
+                <div class="summary-title">월 원금 상환액</div>
+                <div class="summary-value">${summary.monthlyPayment.toLocaleString('ko-KR')}원</div>
+            </div>
+            `;
+        }
+
+        summaryHtml += `
+            <div class="summary-block">
+                <div class="summary-label">총 상환액</div>
+                <div class="summary-value">${summary.totalPayment.toLocaleString('ko-KR')}원</div>
+            </div>
+            <div class="summary-block">
+                <div class="summary-label">총 이자액</div>
+                <div class="summary-value">${summary.totalInterest.toLocaleString('ko-KR')}원</div>
+            </div>
+        `;
+
+        document.getElementById('resultSummaryCard').innerHTML = summaryHtml;
+        document.getElementById('resultSection').style.display = 'block';
+
+      } catch (error) {
+        console.error(error);
+        alert('계산 중 오류가 발생했습니다.');
+      }
+    });
+  </script>
+</body>
+
+</html>

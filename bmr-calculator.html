@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기초 대사량 계산기 - 계산기 모음zip</title>
+  <meta name="description" content="성별, 나이, 키, 체중을 입력하면 하루 기초 대사량(BMR)을 계산해 주는 건강 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K42GDRNW');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownBMR">
+          <button type="button" class="dropbtn" id="dropdownBtnBMR">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuBMR">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdownBMR">
+          <button type="button" class="dropbtn" id="laborDropdownBtnBMR">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenuBMR">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdownBMR">
+          <button type="button" class="dropbtn" id="loanDropdownBtnBMR">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenuBMR">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdownBMR">
+          <button type="button" class="dropbtn" id="taxDropdownBtnBMR">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenuBMR">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdownBMR">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtnBMR">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenuBMR">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdownBMR">
+          <button type="button" class="dropbtn" id="dateDropdownBtnBMR">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenuBMR">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdownBMR">
+          <button type="button" class="dropbtn" id="healthDropdownBtnBMR">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenuBMR">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownBMR">
+          <button type="button" class="dropbtn" id="ageDropdownBtnBMR">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuBMR">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>기초 대사량 계산기</h1>
+        <p class="hero-copy">성별, 키, 체중, 나이를 입력하면 하루 동안 휴식 시 소모되는 기초 대사량(BMR)을 계산합니다. 건강한 체중 관리와 식단 계획의 기준으로 활용해 보세요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>성별</b>: 남성/여성 중 해당하는 항목을 선택합니다.</li>
+          <li><b>키·체중·나이</b>: 현재 신체 정보를 정확하게 입력합니다.</li>
+          <li><b>계산하기</b> 버튼을 누르면 기초 대사량과 활동량별 권장 에너지 섭취량을 확인할 수 있습니다.</li>
+        </ul>
+        <p class="info-card__caption">※ Mifflin-St Jeor 공식을 활용했으며, 실제 에너지 요구량은 개인의 체지방률·근육량·건강 상태에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--narrow">
+          <form id="bmrForm" autocomplete="off">
+            <div class="form-group">
+              <label for="gender">성별</label>
+              <select id="gender" required>
+                <option value="male">남성</option>
+                <option value="female">여성</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="weightKg">체중 (kg)</label>
+              <input type="number" id="weightKg" min="20" max="250" step="0.1" placeholder="예: 68.5" required>
+            </div>
+            <div class="form-group">
+              <label for="heightCm">키 (cm)</label>
+              <input type="number" id="heightCm" min="120" max="220" step="0.1" placeholder="예: 172.3" required>
+            </div>
+            <div class="form-group">
+              <label for="ageYears">나이</label>
+              <input type="number" id="ageYears" min="10" max="100" step="1" placeholder="예: 34" required>
+            </div>
+            <button type="submit" class="btn btn-primary">기초 대사량 계산하기</button>
+          </form>
+        </div>
+
+        <div class="compound-result" id="bmrResult" style="display:none;">
+          <h2>계산 결과</h2>
+          <div id="resultSummaryCard">
+            <div class="summary-block">
+              <div class="summary-title">기초 대사량(BMR)</div>
+              <div class="summary-value" id="bmrValue">-</div>
+              <div class="summary-label">Mifflin-St Jeor 공식 (kcal/일)</div>
+            </div>
+            <div class="summary-block">
+              <div class="summary-title">권장 메시지</div>
+              <div class="summary-value" id="bmrCategory">-</div>
+              <div class="summary-label">활동량과 목표에 따라 조절하세요</div>
+            </div>
+          </div>
+
+          <div class="calculator-note" id="bmrMessage"></div>
+
+          <table class="result-table" id="activityTable">
+            <thead>
+              <tr>
+                <th>활동 수준</th>
+                <th>활동 계수</th>
+                <th>예상 에너지 요구량</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 동적으로 채워짐 -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('bmrForm');
+      const resultBox = document.getElementById('bmrResult');
+      const bmrValueEl = document.getElementById('bmrValue');
+      const bmrCategoryEl = document.getElementById('bmrCategory');
+      const bmrMessageEl = document.getElementById('bmrMessage');
+      const activityTableBody = document.querySelector('#activityTable tbody');
+
+      const activityLevels = [
+        { name: '매우 낮음 (거의 운동 없음)', factor: 1.2, tip: '일상에서 가벼운 스트레칭이나 산책을 추가해 보세요.' },
+        { name: '낮음 (주 1~2회 가벼운 운동)', factor: 1.375, tip: '규칙적인 운동 습관을 만들어 기초 체력을 키워보세요.' },
+        { name: '보통 (주 3~5회 중간 강도 운동)', factor: 1.55, tip: '균형 잡힌 식단과 규칙적인 운동을 유지하면 도움이 됩니다.' },
+        { name: '높음 (거의 매일 고강도 운동)', factor: 1.725, tip: '충분한 단백질과 수분 섭취로 회복에 신경 쓰세요.' },
+        { name: '매우 높음 (하루 2회 이상 운동/육체 노동)', factor: 1.9, tip: '전문가와 상의해 맞춤형 영양 계획을 세우는 것도 좋습니다.' }
+      ];
+
+      function calculateBMR({ gender, weight, height, age }) {
+        const base = 10 * weight + 6.25 * height - 5 * age;
+        return gender === 'male' ? base + 5 : base - 161;
+      }
+
+      function buildActivityRows(bmr) {
+        activityTableBody.innerHTML = '';
+        activityLevels.forEach(level => {
+          const row = document.createElement('tr');
+          const totalEnergy = Math.round(bmr * level.factor);
+          row.innerHTML = `
+            <td>${level.name}</td>
+            <td>${level.factor.toFixed(3)}</td>
+            <td>${totalEnergy.toLocaleString('ko-KR')} kcal/일</td>
+          `;
+          activityTableBody.appendChild(row);
+        });
+      }
+
+      function createMessage(bmr) {
+        if (bmr < 1200) {
+          return 'BMR이 비교적 낮습니다. 영양 섭취를 충분히 하고 근력 운동으로 기초 대사량을 서서히 높여보세요.';
+        }
+        if (bmr < 1600) {
+          return '평균적인 범위입니다. 규칙적인 생활 리듬과 균형 잡힌 식단이 도움이 됩니다.';
+        }
+        if (bmr < 2000) {
+          return '활동량을 적절히 유지하면 체중 관리에 유리한 수준입니다.';
+        }
+        return 'BMR이 높은 편입니다. 충분한 에너지 섭취를 통해 피로를 관리하고 컨디션을 유지하세요.';
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const gender = document.getElementById('gender').value;
+        const weight = parseFloat(document.getElementById('weightKg').value);
+        const height = parseFloat(document.getElementById('heightCm').value);
+        const age = parseInt(document.getElementById('ageYears').value, 10);
+
+        if (!gender || !weight || !height || !age) {
+          resultBox.style.display = 'none';
+          return;
+        }
+
+        try {
+          const response = await fetch('/.netlify/functions/calculateBMR', {
+            method: 'POST',
+            body: JSON.stringify({ gender, weight, height, age }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+          if (!response.ok) throw new Error('Calculation failed');
+          const data = await response.json();
+          const bmr = data.bmr;
+          const message = createMessage(bmr);
+
+          bmrValueEl.textContent = Math.round(bmr).toLocaleString('ko-KR') + ' kcal';
+          bmrCategoryEl.textContent = gender === 'male' ? '남성 기준 계산' : '여성 기준 계산';
+          bmrMessageEl.textContent = message;
+
+          buildActivityRows(bmr);
+          resultBox.style.display = 'block';
+
+        } catch (error) {
+          console.error(error);
+          alert('계산 중 오류가 발생했습니다.');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

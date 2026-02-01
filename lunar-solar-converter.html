@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>음력·양력 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="양력 날짜를 음력으로, 음력 날짜를 양력으로 간편하게 변환하는 음력·양력 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="음력·양력 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="양력 날짜를 음력으로, 음력 날짜를 양력으로 간편하게 변환해 보세요. 윤달 여부까지 확인 가능합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/lunar-solar-converter.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
+  <meta property="og:locale" content="ko_KR">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownConverter">
+          <button type="button" class="dropbtn" id="dropdownBtnConverter">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuConverter">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdownConverter">
+          <button type="button" class="dropbtn" id="laborDropdownBtnConverter">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenuConverter">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdownConverter">
+          <button type="button" class="dropbtn" id="loanDropdownBtnConverter">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenuConverter">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdownConverter">
+          <button type="button" class="dropbtn" id="taxDropdownBtnConverter">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenuConverter">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdownConverter">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtnConverter">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenuConverter">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdownConverter">
+          <button type="button" class="dropbtn" id="dateDropdownBtnConverter">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenuConverter">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdownConverter">
+          <button type="button" class="dropbtn" id="healthDropdownBtnConverter">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenuConverter">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownConverter">
+          <button type="button" class="dropbtn" id="ageDropdownBtnConverter">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuConverter">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  <script src="assets/js/main.js"></script>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>음력·양력 계산기</h1>
+        <p class="hero-copy">양력 날짜를 음력으로, 음력 날짜를 양력으로 즉시 변환하세요. 윤달 여부와 변환 결과를 한눈에 확인할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>양력 → 음력</b>: 변환할 양력 날짜를 선택한 뒤 변환 버튼을 누르면 음력과 윤달 여부를 확인할 수 있습니다.</li>
+          <li><b>음력 → 양력</b>: 변환할 음력 날짜를 선택하고 윤달 여부를 체크한 뒤 변환하면 해당하는 양력 날짜가 표시됩니다.</li>
+          <li><b>윤달</b>: 음력 변환 시 윤달이면 `윤달 여부`를 체크해야 정확한 날짜가 계산됩니다.</li>
+        </ul>
+        <p class="info-card__caption">※ 본 계산기는 1900년부터 2050년 사이의 날짜를 지원합니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;"
+      data-ad-unit = "DAN-fousInY12EGeI3vh"
+      data-ad-width = "300"
+      data-ad-height = "250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--narrow">
+          <h2>양력 → 음력</h2>
+          <form id="solarToLunarForm">
+            <div class="form-group">
+              <label for="solarDate">양력 날짜</label>
+              <input type="date" id="solarDate" required>
+            </div>
+            <button type="submit" class="btn btn-primary">변환하기</button>
+          </form>
+          <div id="solarResult" class="calculator-note" aria-live="polite"></div>
+        </div>
+
+        <div class="compound-card compound-card--narrow">
+          <h2>음력 → 양력</h2>
+          <form id="lunarToSolarForm">
+            <div class="form-group">
+              <label for="lunarDate">음력 날짜</label>
+              <input type="date" id="lunarDate" min="1900-01-01" max="2050-12-31" required>
+            </div>
+            <div class="form-group form-group--inline">
+              <label for="isLeapMonth">윤달 여부</label>
+              <div class="input-inline">
+                <input type="checkbox" id="isLeapMonth">
+                <span style="align-self:center;color:var(--color-text-muted);font-size:0.92rem;">윤달이면 체크하세요</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">변환하기</button>
+          </form>
+          <div id="lunarResult" class="calculator-note" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank" data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank" data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script src="assets/js/solarlunar.js"></script>
+  <script src="assets/js/lunar-solar.js"></script>
+</body>
+</html>
+

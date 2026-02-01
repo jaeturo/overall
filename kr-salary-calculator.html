@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연봉 실수령액 계산기 - 계산기 모음zip</title>
+  <meta name="description" content="대한민국 기준 연봉 실수령액(월 급여) 계산기. 4대보험과 간이세액(선택)을 반영한 월 실수령액을 추정합니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdown">
+          <button type="button" class="dropbtn" id="laborDropdownBtn">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenu">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdown">
+          <button type="button" class="dropbtn" id="loanDropdownBtn">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenu">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdown">
+          <button type="button" class="dropbtn" id="taxDropdownBtn">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenu">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdown">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtn">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenu">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdown">
+          <button type="button" class="dropbtn" id="dateDropdownBtn">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenu">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdown">
+          <button type="button" class="dropbtn" id="healthDropdownBtn">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenu">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+        <!-- 기능별 메뉴는 추후 추가 -->
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>연봉 실수령액 계산기</h1>
+        <p class="hero-copy">연봉과 비과세 식대를 입력하면 4대보험과 간이세액(선택)을 반영한 월 실수령액을 추정합니다. 급여 협상과 재무 계획에 참고할 수 있는 실용적인 계산 도구입니다.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>연봉</b>: 세전 연간 급여 총액을 입력합니다.</li>
+          <li><b>월 비과세 식대</b>: 비과세로 지급되는 식대가 있다면 월 기준 금액을 입력합니다.</li>
+          <li><b>간이세액 추정 포함</b>: ‘예’를 선택하면 간단한 간이세액과 지방소득세를 포함하여 실수령액을 계산합니다.</li>
+        </ul>
+        <p class="info-card__caption">※ 계산 결과는 일반적인 비율을 기준으로 한 참고용 예시이며, 실제 금액은 회사 정책과 개인 공제 항목에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card" id="salaryCard">
+          <form id="salaryForm">
+            <div class="form-group">
+              <label for="annualSalary">연봉 (원)</label>
+              <input type="text" id="annualSalary" inputmode="numeric" placeholder="예: 45,000,000" autocomplete="off"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="monthlyNonTaxMeal">월 비과세 식대 (원, 선택)</label>
+              <input type="text" id="monthlyNonTaxMeal" inputmode="numeric" placeholder="예: 200,000" autocomplete="off"
+                value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="includeTax">간이세액 추정 포함</label>
+              <select id="includeTax">
+                <option value="yes">예</option>
+                <option value="no" selected>아니오</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">계산하기</button>
+          </form>
+        </div>
+
+        <div class="compound-result" id="salaryResult" style="display:none;">
+          <h2>월 실수령액 결과</h2>
+
+          <div id="resultSummaryCard"></div>
+
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>금액(원)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>월 총급여</td>
+                <td id="tGross">-</td>
+              </tr>
+              <tr>
+                <td>국민연금 (4.5%)</td>
+                <td id="tPension">-</td>
+              </tr>
+              <tr>
+                <td>건강보험 (3.545%)</td>
+                <td id="tHealth">-</td>
+              </tr>
+              <tr>
+                <td>장기요양 (건보×12.95%)</td>
+                <td id="tLtc">-</td>
+              </tr>
+              <tr>
+                <td>고용보험 (0.9%)</td>
+                <td id="tEmployment">-</td>
+              </tr>
+              <tr>
+                <td>예상 세금</td>
+                <td id="tTax">-</td>
+              </tr>
+              <tr>
+                <td><strong>월 실수령액</strong></td>
+                <td id="tNet"><strong>-</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="calculator-note">
+            위 계산은 일반적인 비율에 기반한 추정치로, 실제 금액은 회사 정책, 공제 항목, 간이세액 테이블/부양가족 수 등 조건에 따라 달라질 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script>
+    (function () {
+      var formatter = new Intl.NumberFormat('ko-KR');
+
+      function toNumber(el) {
+        var v = parseFloat((el.value || '').toString().replace(/[^0-9.-]/g, ''));
+        return isNaN(v) ? 0 : v;
+      }
+      function fmt(n) {
+        return Math.round(n).toLocaleString('ko-KR');
+      }
+
+      function bindCurrencyInput(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var lock = false;
+        function formatValue() {
+          if (lock) return;
+          lock = true;
+          var raw = (el.value || '').replace(/[^\d]/g, '');
+          el.value = raw ? formatter.format(parseInt(raw, 10)) : '';
+          lock = false;
+        }
+        el.addEventListener('input', formatValue);
+        formatValue();
+      }
+
+      bindCurrencyInput('annualSalary');
+      bindCurrencyInput('monthlyNonTaxMeal');
+
+      var form = document.getElementById('salaryForm');
+      var resultBox = document.getElementById('salaryResult');
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var annual = toNumber(document.getElementById('annualSalary'));
+        var monthlyMeal = toNumber(document.getElementById('monthlyNonTaxMeal'));
+        var includeTax = document.getElementById('includeTax').value === 'yes';
+
+        if (annual <= 0) {
+          resultBox.style.display = 'none';
+          return;
+        }
+
+        try {
+          const response = await fetch('/.netlify/functions/calculateSalary', {
+            method: 'POST',
+            body: JSON.stringify({ annualSalary: annual, monthlyNonTaxMeal: monthlyMeal, includeTax: includeTax }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error('Calculation failed');
+          const data = await response.json();
+
+          // 요약 카드 구성
+          var summaryHtml = `
+              <div class="summary-block">
+                <div class="summary-title">월 총급여</div>
+                <div class="summary-value">${fmt(data.grossMonthly)}원</div>
+                <div class="summary-label">연봉 ÷ 12</div>
+              </div>
+              <div class="summary-block">
+                <div class="summary-title">4대보험 합계</div>
+                <div class="summary-value negative">${fmt(data.fourInsurances)}원</div>
+                <div class="summary-label">국민연금+건강+장기요양+고용</div>
+              </div>
+              <div class="summary-block">
+                <div class="summary-title">예상 세금</div>
+                <div class="summary-value ${data.includeTax ? 'negative' : ''}">${data.includeTax ? fmt(data.tax) + '원' : '미포함'}</div>
+                <div class="summary-label">간이세액(선택) + 지방소득세</div>
+              </div>
+              <div class="summary-block">
+                <div class="summary-title">월 실수령액</div>
+                <div class="summary-value positive">${fmt(data.netMonthly)}원</div>
+                <div class="summary-label">비과세 식대 반영</div>
+              </div>
+            `;
+          document.getElementById('resultSummaryCard').innerHTML = summaryHtml;
+
+          document.getElementById('tGross').textContent = fmt(data.grossMonthly);
+          document.getElementById('tPension').textContent = fmt(data.pension);
+          document.getElementById('tHealth').textContent = fmt(data.health);
+          document.getElementById('tLtc').textContent = fmt(data.ltc);
+          document.getElementById('tEmployment').textContent = fmt(data.employment);
+          document.getElementById('tTax').textContent = data.includeTax ? fmt(data.tax) : '0';
+          document.getElementById('tNet').textContent = fmt(data.netMonthly);
+
+          resultBox.style.display = 'block';
+
+        } catch (error) {
+          console.error('Error:', error);
+          alert('계산 중 오류가 발생했습니다.');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI 계산기 - 비만도 측정 및 건강 관리 가이드 | 계산기 모음zip</title>
+  <meta name="description" content="키(cm)와 체중(kg)을 입력하면 BMI와 체중 상태 구간을 확인할 수 있는 건강 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K42GDRNW');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownBMI">
+          <button type="button" class="dropbtn" id="dropdownBtnBMI">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuBMI">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdownBMI">
+          <button type="button" class="dropbtn" id="laborDropdownBtnBMI">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenuBMI">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdownBMI">
+          <button type="button" class="dropbtn" id="loanDropdownBtnBMI">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenuBMI">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdownBMI">
+          <button type="button" class="dropbtn" id="taxDropdownBtnBMI">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenuBMI">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdownBMI">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtnBMI">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenuBMI">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdownBMI">
+          <button type="button" class="dropbtn" id="dateDropdownBtnBMI">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenuBMI">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdownBMI">
+          <button type="button" class="dropbtn" id="healthDropdownBtnBMI">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenuBMI">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownBMI">
+          <button type="button" class="dropbtn" id="ageDropdownBtnBMI">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuBMI">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>BMI 계산기</h1>
+        <p class="hero-copy">키와 체중을 입력하면 체질량지수(BMI)와 체중 상태 구간을 즉시 확인할 수 있습니다. 건강 관리의 첫 단계로 활용해 보세요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>키(cm)</b>: 소수점 한 자리까지 입력할 수 있습니다.</li>
+          <li><b>체중(kg)</b>: 현재 체중을 입력합니다.</li>
+          <li>두 값을 입력한 뒤 <b>BMI 계산하기</b> 버튼을 누르면 BMI와 체중 상태가 표시됩니다.</li>
+        </ul>
+        <p class="info-card__caption">※ BMI는 참고 지표이며, 개인의 체지방 분포나 근육량을 완벽히 반영하지 않습니다. 자세한 건강 판단은 전문가와 상담하세요.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--narrow">
+          <form id="bmiForm" autocomplete="off">
+            <div class="form-group">
+              <label for="heightCm">키 (cm)</label>
+              <input type="number" id="heightCm" min="50" max="250" step="0.1" placeholder="예: 170.5" required>
+            </div>
+            <div class="form-group">
+              <label for="weightKg">체중 (kg)</label>
+              <input type="number" id="weightKg" min="20" max="250" step="0.1" placeholder="예: 65.2" required>
+            </div>
+            <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "BMI 계산기",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "description": "키와 체중을 입력하여 BMI(체질량지수)를 계산하고 비만 정도를 알려주는 무료 웹 도구입니다."
+    }
+    </script>
+            <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "BMI가 높으면 무조건 건강이 나쁜가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "아닙니다. BMI는 근육량과 체지방량을 구분하지 못하므로, 근육이 많은 사람도 BMI가 높게 나올 수 있습니다."
+        }
+      }, {
+        "@type": "Question",
+        "name": "여자와 남자의 BMI 계산법이 다른가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "공식은 동일하지만, 성별에 따른 체지방 분포 차이로 인해 건강 위험도 해석이 달라질 수 있습니다."
+        }
+      }]
+    }
+    </script>
+            <button type="submit" class="btn btn-primary">BMI 계산하기</button>
+          </form>
+        </div>
+
+        <div class="compound-result" id="bmiResult" style="display:none;">
+          <h2>계산 결과</h2>
+          <div id="resultSummaryCard">
+            <div class="summary-block">
+              <div class="summary-title">BMI</div>
+              <div class="summary-value" id="bmiValue">-</div>
+              <div class="summary-label">체중(kg) ÷ (키(m))²</div>
+            </div>
+            <div class="summary-block">
+              <div class="summary-title">체중 상태</div>
+              <div class="summary-value" id="bmiCategory">-</div>
+              <div class="summary-label">대한비만학회 기준</div>
+            </div>
+          </div>
+
+          <div class="calculator-note" id="bmiMessage"></div>
+
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th>체중 상태</th>
+                <th>BMI 구간</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>저체중</td>
+                <td>&lt; 18.5</td>
+              </tr>
+              <tr>
+                <td>정상</td>
+                <td>18.5 ~ 22.9</td>
+              </tr>
+              <tr>
+                <td>과체중</td>
+                <td>23.0 ~ 24.9</td>
+              </tr>
+              <tr>
+                <td>비만(1단계)</td>
+                <td>25.0 ~ 29.9</td>
+              </tr>
+              <tr>
+                <td>비만(2단계)</td>
+                <td>30.0 ~ 34.9</td>
+              </tr>
+              <tr>
+                <td>고도비만</td>
+                <td>≥ 35.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Enrichment for AdSense & SEO -->
+    <section class="section content-article">
+      <h2>BMI란 무엇인가요?</h2>
+      <p>
+        <strong>BMI(Body Mass Index, 체질량지수)</strong>는 키와 몸무게를 이용하여 비만 정도를 추정하는 계산법입니다.
+        BMI는 계산 방법이 간단하고 쉬워 전 세계적으로 비만 판정의 지표로 널리 사용되고 있습니다.
+        하지만 근육량, 유전적 원인, 개인적 차이점을 반영하지 못하는 단점이 있으므로, **건강 참고용 자료**로만 활용하는 것이 좋습니다.
+      </p>
+
+      <h3>BMI 계산 원리</h3>
+      <p>
+        BMI(체질량지수)는 키와 몸무게의 비율을 통해 비만도를 추정하는 과학적인 지표입니다.
+        계산기 모음zip의 BMI 계산기는 대한비만학회의 최신 비만 진단 기준을 적용하여 결과를 분석해 드립니다.
+      </p>
+
+      <h3>비만이 건강에 미치는 영향</h3>
+      <p>
+        비만은 단순히 체중이 많이 나가는 것을 넘어, 체내에 과도한 체지방이 쌓인 상태를 말합니다.
+        대한비만학회에 따르면 비만은 당뇨병, 고지혈증, 고혈압, 심혈관 질환 등 다양한 <strong>만성 퇴행성 질환</strong>을 유발할 수 있습니다.
+      </p>
+      <ul>
+        <li><strong>고혈압 & 심장질환:</strong> 혈관에 압력을 가해 심장에 부담을 줍니다.</li>
+        <li><strong>제2형 당뇨병:</strong> 인슐린 저항성을 높여 혈당 조절을 어렵게 합니다.</li>
+        <li><strong>관절염:</strong> 과도한 체중이 무릎과 허리 관절을 압박합니다.</li>
+      </ul>
+    </section>
+
+    <section class="section faq-section">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <details class="faq-item">
+        <summary>BMI가 높으면 무조건 건강이 나쁜가요?</summary>
+        <p>
+          아닙니다. BMI는 근육량과 체지방량을 구분하지 못합니다.
+          따라서 근육이 많은 보디빌더나 운동선수는 BMI가 '비만'으로 나올 수 있지만, 실제로는 건강한 상태일 수 있습니다.
+          정확한 진단을 위해서는 체지방률 측정(인바디 등)과 전문가 상담이 필요합니다.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>여자와 남자의 BMI 계산법이 다른가요?</summary>
+        <p>
+          기본적인 BMI 계산 공식은 여자와 남자 모두 동일합니다.
+          다만, 성별과 나이에 따라 체지방 분포가 다르기 때문에 동일한 BMI 수치라도 건강 위험도는 다를 수 있습니다.
+          일반적으로 여성은 남성보다 체지방 비율이 높은 경향이 있습니다.
+        </p>
+      </details>
+      <details class="faq-item">
+        <summary>BMI 정상 범위는 어떻게 되나요?</summary>
+        <p>
+          한국(대한비만학회) 기준으로는 <strong>18.5 ~ 22.9</strong> 사이를 정상 범위로 봅니다.
+          23.0 이상부터는 과체중으로 분류하며, 25.0 이상을 비만으로 정의합니다.
+          (참고: 서구권 기준(WHO)은 25.0 이상 과체중, 30.0 이상 비만으로 기준이 다소 다릅니다.)
+        </p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById('bmiForm');
+      const resultBox = document.getElementById('bmiResult');
+      const bmiValueEl = document.getElementById('bmiValue');
+      const bmiCategoryEl = document.getElementById('bmiCategory');
+      const bmiMessageEl = document.getElementById('bmiMessage');
+
+      const categories = [
+        { name: '저체중', min: 0, max: 18.5, message: '체중 증가와 균형 잡힌 영양 섭취가 필요합니다.' },
+        { name: '정상', min: 18.5, max: 23.0, message: '현재 상태를 유지하며 규칙적인 운동을 지속하세요.' },
+        { name: '과체중', min: 23.0, max: 25.0, message: '가벼운 운동과 식단 조절로 체중 관리를 시작해 보세요.' },
+        { name: '비만(1단계)', min: 25.0, max: 30.0, message: '체중 감량을 위한 꾸준한 운동과 식이요법이 필요합니다.' },
+        { name: '비만(2단계)', min: 30.0, max: 35.0, message: '전문의 상담과 집중적인 체중 관리가 권장됩니다.' },
+        { name: '고도비만', min: 35.0, max: Infinity, message: '의료진과 상의하여 체계적인 치료 계획을 세워야 합니다.' }
+      ];
+
+      function findCategory(bmi) {
+        return categories.find(cat => bmi >= cat.min && bmi < cat.max) || categories[categories.length - 1];
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        const height = parseFloat(document.getElementById('heightCm').value);
+        const weight = parseFloat(document.getElementById('weightKg').value);
+
+        if (!height || !weight || height <= 0 || weight <= 0) {
+          resultBox.style.display = 'none';
+          return;
+        }
+
+        try {
+          const response = await fetch('/.netlify/functions/calculateBMI', {
+            method: 'POST',
+            body: JSON.stringify({ heightCm: height, weightKg: weight }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error('Calculation failed');
+
+          const data = await response.json();
+
+          bmiValueEl.textContent = data.bmi;
+          bmiCategoryEl.textContent = data.category;
+          bmiMessageEl.textContent = data.message;
+          resultBox.style.display = 'block';
+
+        } catch (error) {
+          console.error('Error:', error);
+          alert('계산 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

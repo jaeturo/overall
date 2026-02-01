@@ -1,0 +1,11 @@
+{
+  "name": "계산기 모음zip",
+  "short_name": "계산기zip",
+  "description": "실생활에 꼭 필요한 계산기와 도구들을 한 곳에",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#88BF78",
+  "orientation": "portrait-primary"
+}
+

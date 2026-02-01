@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>만능도구 모음zip</title>
+    <title>계산기 모음zip</title>
     <link>https://toolzip.netlify.app/</link>
     <description>실생활에 도움되는 계산기와 검사기 모음</description>
     <language>ko-KR</language>
@@ -13,7 +13,7 @@
       <link>https://toolzip.netlify.app/</link>
       <guid isPermaLink="true">https://toolzip.netlify.app/</guid>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
-      <description>만능도구 모음zip 메인 페이지</description>
+      <description>계산기 모음zip 메인 페이지</description>
     </item>
 
     <item>
@@ -33,11 +33,19 @@
     </item>
 
     <item>
-      <title>주식 수익률 계산기</title>
+      <title>주가 수익률 계산기</title>
       <link>https://toolzip.netlify.app/profit.html</link>
       <guid isPermaLink="true">https://toolzip.netlify.app/profit.html</guid>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
       <description>매입가, 현재가, 수량으로 수익률 계산</description>
+    </item>
+
+    <item>
+      <title>채권 수익률 계산기</title>
+      <link>https://toolzip.netlify.app/bond-yield.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/bond-yield.html</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
+      <description>채권 현재 수익률과 만기 수익률 계산</description>
     </item>
 
     <item>
@@ -89,11 +97,11 @@
     </item>
 
     <item>
-      <title>띠별 궁합</title>
-      <link>https://toolzip.netlify.app/zodiac-compatibility.html</link>
-      <guid isPermaLink="true">https://toolzip.netlify.app/zodiac-compatibility.html</guid>
+      <title>프리랜서 3.3% 계산기</title>
+      <link>https://toolzip.netlify.app/freelancer-tax-calculator.html</link>
+      <guid isPermaLink="true">https://toolzip.netlify.app/freelancer-tax-calculator.html</guid>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
-      <description>띠별 궁합 상대 평가 결과 제공</description>
+      <description>계약 금액 또는 실수령액 기준으로 원천징수 3.3%와 실수령액을 계산</description>
     </item>
 
     <item>
@@ -101,7 +109,7 @@
       <link>https://toolzip.netlify.app/terms.html</link>
       <guid isPermaLink="true">https://toolzip.netlify.app/terms.html</guid>
       <pubDate>Wed, 29 Oct 2025 00:00:00 +0900</pubDate>
-      <description>만능도구 모음zip 이용약관</description>
+      <description>계산기 모음zip 이용약관</description>
     </item>
   </channel>
 </rss>

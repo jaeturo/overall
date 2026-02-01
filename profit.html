@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주식 수익률 계산기 | 만능도구 모음zip</title>
-  <meta name="description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 만능도구 모음zip 주식 수익률 계산기입니다.">
+  <title>주가 수익률 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 계산기 모음zip 주가 수익률 계산기입니다.">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- SEO -->
-  <meta name="title" content="주식 수익률 계산기 | 만능도구 모음zip">
-  <meta name="keywords" content="수익률 계산기, 주식 수익률, 투자 수익, 세후 수익률">
-  <meta name="author" content="만능도구 모음zip">
+  <meta name="title" content="주가 수익률 계산기 | 계산기 모음zip">
+  <meta name="keywords" content="주가 수익률 계산기, 주식 수익률, 투자 수익, 세후 수익률">
+  <meta name="author" content="계산기 모음zip">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="주식 수익률 계산기 | 만능도구 모음zip">
-  <meta property="og:description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 만능도구 모음zip 주식 수익률 계산기입니다.">
+  <meta property="og:title" content="주가 수익률 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 계산기 모음zip 주가 수익률 계산기입니다.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolzip.netlify.app/profit.html">
   <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
-  <meta property="og:image:alt" content="만능도구 모음zip">
-  <meta property="og:site_name" content="만능도구 모음zip">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
   <meta property="og:locale" content="ko_KR">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="주식 수익률 계산기 | 만능도구 모음zip">
-  <meta name="twitter:description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 만능도구 모음zip 주식 수익률 계산기입니다.">
+  <meta name="twitter:title" content="주가 수익률 계산기 | 계산기 모음zip">
+  <meta name="twitter:description" content="주식 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산하는 계산기 모음zip 주가 수익률 계산기입니다.">
   <meta name="twitter:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
 
   <!-- UX/SEO extras -->
@@ -40,50 +41,97 @@
 
   <!-- PWA/browser -->
   <meta name="theme-color" content="#ffffff">
-  <meta name="application-name" content="만능도구 모음zip">
+  <meta name="application-name" content="계산기 모음zip">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="주식 수익률 계산기">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="주가 수익률 계산기">
 
   <!-- Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K42GDRNW');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K42GDRNW');</script>
   <!-- End Google Tag Manager -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
     <nav class="navbar">
-      <div class="logo">만능도구 모음zip</div>
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item nav-home"><a href="index.html">홈</a></li>
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
         <li class="nav-item dropdown" id="stockDropdownProfit">
           <button type="button" class="dropbtn" id="dropdownBtnProfit">📈 투자 계산기</button>
           <ul class="dropdown-content" id="dropdownMenuProfit">
             <li><a href="compound.html">복리 계산기</a></li>
             <li><a href="dividend.html">배당률 계산기</a></li>
-            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
             <li><a href="averaging.html">물타기 계산기</a></li>
             <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdownProfit">
+          <button type="button" class="dropbtn" id="laborDropdownBtnProfit">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenuProfit">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdownProfit">
+          <button type="button" class="dropbtn" id="loanDropdownBtnProfit">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenuProfit">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdownProfit">
+          <button type="button" class="dropbtn" id="taxDropdownBtnProfit">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenuProfit">
             <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
             <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdownProfit">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtnProfit">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenuProfit">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdownProfit">
+          <button type="button" class="dropbtn" id="dateDropdownBtnProfit">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenuProfit">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdownProfit">
+          <button type="button" class="dropbtn" id="healthDropdownBtnProfit">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenuProfit">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown" id="ageDropdownProfit">
@@ -93,293 +141,95 @@
             <li><a href="zodiac-calculator.html">띠 계산기</a></li>
           </ul>
         </li>
-        <li class="nav-item dropdown" id="compatibilityDropdownProfit">
-          <button type="button" class="dropbtn" id="compatibilityDropdownBtnProfit">💕 궁합</button>
-          <ul class="dropdown-content" id="compatibilityDropdownMenuProfit">
-            <li><a href="zodiac-compatibility.html">띠별 궁합</a></li>
-          </ul>
-        </li>
         <!-- 기능별 메뉴는 추후 추가 -->
-  <style>
-    .dropdown { position: relative; }
-    .dropbtn {
-      cursor: pointer;
-      background: linear-gradient(90deg, #88BF78 60%, #98BF8E 100%);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 1rem;
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(143,183,164,0.10);
-      transition: background 0.2s, color 0.2s;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      height: 40px;
-    }
-    .dropbtn:hover {
-      background: linear-gradient(90deg, #98BF8E 60%, #88BF78 100%);
-      color: #2563eb;
-    }
-    .dropdown-content {
-      display: none !important;
-      position: absolute;
-      top: 110%;
-      left: 0;
-      background: #fff !important;
-      min-width: 220px;
-      box-shadow: 0 8px 32px rgba(136,191,120,0.18);
-      z-index: 20;
-      border-radius: 18px;
-      padding: 18px 0 10px 0;
-      margin: 0;
-      border: 1.5px solid #C7D9AD;
-      flex-direction: column;
-      gap: 0;
-      animation: fadeInCard 0.18s;
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    @keyframes fadeInCard {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .dropdown-content li {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .dropdown-content a {
-      color: #000 !important;
-      padding: 16px 28px 14px 28px;
-      text-decoration: none;
-      display: block;
-      font-size: 1.08rem;
-      border-radius: 10px;
-      background: none;
-      margin: 0 10px 8px 10px;
-      font-weight: 500;
-      transition: background 0.15s, color 0.15s;
-      box-shadow: 0 1px 4px rgba(136,191,120,0.06);
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    .dropdown-content a:hover {
-      background: linear-gradient(90deg, #e6f4ea 60%, #f7f8fa 100%);
-      color: #2563eb;
-    }
-    .dropdown-content.show {
-      display: flex !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    }
-    @media (max-width: 600px) {
-      .dropdown-content { min-width: 140px; padding: 10px 0 6px 0; }
-      .dropdown-content a { font-size: 0.97rem; padding: 12px 16px 10px 16px; margin: 0 4px 6px 4px; }
-      .dropbtn { font-size: 1rem; padding: 10px 14px; }
-    }
-  </style>
       </ul>
     </nav>
-  <script>
-    // 드롭다운 클릭 토글
-    document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.getElementById('dropdownBtnProfit');
-      var menu = document.getElementById('dropdownMenuProfit');
-      var dropdown = document.getElementById('stockDropdownProfit');
-      
-      var ageBtn = document.getElementById('ageDropdownBtnProfit');
-      var ageMenu = document.getElementById('ageDropdownMenuProfit');
-      var ageDropdown = document.getElementById('ageDropdownProfit');
-      
-      var compatibilityBtn = document.getElementById('compatibilityDropdownBtnProfit');
-      var compatibilityMenu = document.getElementById('compatibilityDropdownMenuProfit');
-      var compatibilityDropdown = document.getElementById('compatibilityDropdownProfit');
-      
-      // 드롭다운 메뉴 위치 조정 함수
-      function adjustDropdownPosition(btn, menu, dropdown) {
-        if (menu.classList.contains('show')) {
-          const dropdownRect = dropdown.getBoundingClientRect();
-          const menuWidth = 220; // min-width 값
-          const viewportWidth = window.innerWidth;
-          
-          // 기존 위치 클래스 제거
-          menu.classList.remove('right-aligned', 'center-aligned');
-          
-          // 오른쪽에서 잘릴 경우
-          if (dropdownRect.left + menuWidth > viewportWidth) {
-            // 왼쪽에서도 잘릴 경우 중앙 정렬
-            if (dropdownRect.left - menuWidth < 0) {
-              menu.classList.add('center-aligned');
-            } else {
-              // 오른쪽 정렬
-              menu.classList.add('right-aligned');
-            }
-          }
-        }
-      }
-      
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        menu.classList.toggle('show');
-        ageMenu.classList.remove('show');
-        compatibilityMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (menu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(btn, menu, dropdown), 10);
-        }
-      });
-      
-      ageBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        ageMenu.classList.toggle('show');
-        menu.classList.remove('show');
-        compatibilityMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (ageMenu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(ageBtn, ageMenu, ageDropdown), 10);
-        }
-      });
-      
-      compatibilityBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        compatibilityMenu.classList.toggle('show');
-        menu.classList.remove('show');
-        ageMenu.classList.remove('show');
-        
-        // 메뉴가 열릴 때 위치 조정
-        if (compatibilityMenu.classList.contains('show')) {
-          setTimeout(() => adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown), 10);
-        }
-      });
-      
-      // 창 크기 변경 시 위치 재조정
-      window.addEventListener('resize', function() {
-        if (menu.classList.contains('show')) {
-          adjustDropdownPosition(btn, menu, dropdown);
-        }
-        if (ageMenu.classList.contains('show')) {
-          adjustDropdownPosition(ageBtn, ageMenu, ageDropdown);
-        }
-        if (compatibilityMenu.classList.contains('show')) {
-          adjustDropdownPosition(compatibilityBtn, compatibilityMenu, compatibilityDropdown);
-        }
-      });
-      
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          menu.classList.remove('show');
-        }
-        if (!ageDropdown.contains(e.target)) {
-          ageMenu.classList.remove('show');
-        }
-        if (!compatibilityDropdown.contains(e.target)) {
-          compatibilityMenu.classList.remove('show');
-        }
-      });
-    });
-
-    // 모바일 햄버거 메뉴 토글
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-      });
-      
-      // 메뉴 링크 클릭 시 메뉴 닫기
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-        });
-      });
-    });
-  </script>
+    <script src="assets/js/main.js"></script>
   </header>
   <main class="main-content">
-    <section class="intro-section">
-      <h1>주식 수익률 계산기</h1>
-      <p>주식의 매입가, 현재가, 수량을 입력하면 수익률과 수익금을 계산할 수 있습니다.<br>
-      투자 성과를 쉽게 확인해보세요.</p>
-    </section>
-    <!-- 카카오애드핏 광고 -->
-    <div style="display:flex;justify-content:center;margin:30px 0;">
-      <ins class="kakao_ad_area" style="display:none;"
-      data-ad-unit = "DAN-fousInY12EGeI3vh"
-      data-ad-width = "300"
-      data-ad-height = "250"></ins>
-      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-    </div>
-    <section class="feature-section">
-      <div class="compound-card" style="max-width:480px;margin:0 auto;">
-        <form id="profitForm" autocomplete="off">
-          <div class="form-group">
-            <label for="purchasePrice">매입가(원)</label>
-            <input type="text" id="purchasePrice" name="purchasePrice" inputmode="numeric" pattern="[0-9,]*" placeholder="50,000" required autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="currentPrice">현재가(원)</label>
-            <input type="text" id="currentPrice" name="currentPrice" inputmode="numeric" pattern="[0-9,]*" placeholder="55,000" required autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="quantity">보유 수량(주)</label>
-            <input type="number" id="quantity" name="quantity" min="1" step="1" placeholder="100" required>
-          </div>
-          <div class="form-group">
-            <label for="tax">세금(%)</label>
-            <input type="number" id="tax" name="tax" min="0" max="100" step="0.01" placeholder="0.23">
-          </div>
-          <button type="submit" class="btn">계산하기</button>
-        </form>
-      </div>
-      <div id="resultSection" class="compound-result" style="display:none;max-width:480px;margin:0 auto;">
-        <div id="resultSummaryCard" style="background:linear-gradient(90deg,#e6f4ea 60%,#f7f8fa 100%);border-radius:12px;padding:18px 14px 14px 14px;margin-bottom:18px;box-shadow:0 2px 8px rgba(143,183,164,0.10);text-align:center;"></div>
-        <h2>계산 결과</h2>
-        <table class="result-table" id="resultTable">
-          <thead>
-            <tr><th>구분</th><th>값</th></tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+    <section class="section">
+      <div class="intro-section">
+        <h1>주가 수익률 계산기</h1>
+        <p class="hero-copy">매입가, 현재가, 보유 수량을 입력하면 손익 금액과 수익률을 즉시 확인할 수 있습니다. 투자 포지션을 되돌아보고 다음 전략을 세우는 데 활용해 보세요.</p>
       </div>
     </section>
 
-    <!-- 사용 방법 안내 -->
-    <section class="feature-section" style="max-width:480px;margin:32px auto 0 auto;">
-      <div style="background:#f1f5f9;border-radius:10px;padding:18px 14px 12px 14px;color:#374151;font-size:0.98rem;line-height:1.7;box-shadow:0 1px 6px rgba(143,183,164,0.06);">
-        <strong>사용 방법 안내</strong><br>
-        <ul style="margin:10px 0 0 18px;padding:0;">
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
           <li><b>매입가</b>: 주식을 구매한 가격을 입력합니다.</li>
           <li><b>현재가</b>: 현재 주식의 시장 가격을 입력합니다.</li>
           <li><b>보유 수량</b>: 현재 보유하고 있는 주식의 수량을 입력합니다.</li>
           <li><b>세금</b>: 거래세, 증권거래세 등을 고려한 세율(%)을 입력합니다. (예: 0.23)</li>
           <li>모든 값을 입력한 후 <b>계산하기</b> 버튼을 누르면 결과가 아래에 표시됩니다.</li>
         </ul>
-        <div style="margin-top:10px;color:#5a7d6c;font-size:0.97rem;">※ 계산 결과는 참고용이며, 실제 투자 전 전문가 상담을 권장합니다.</div>
+        <p class="info-card__caption">※ 계산 결과는 참고용이며, 실제 투자 전 전문가 상담을 권장합니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--narrow">
+          <form id="profitForm" autocomplete="off">
+            <div class="form-group">
+              <label for="purchasePrice">매입가(원)</label>
+              <input type="text" id="purchasePrice" name="purchasePrice" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="50,000" required autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="currentPrice">현재가(원)</label>
+              <input type="text" id="currentPrice" name="currentPrice" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="55,000" required autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="quantity">보유 수량(주)</label>
+              <input type="number" id="quantity" name="quantity" min="1" step="1" placeholder="100" required>
+            </div>
+            <div class="form-group">
+              <label for="tax">세금(%)</label>
+              <input type="number" id="tax" name="tax" min="0" max="100" step="0.01" placeholder="0.23">
+            </div>
+            <button type="submit" class="btn btn-primary">계산하기</button>
+          </form>
+        </div>
+        <div id="resultSection" class="compound-result compound-result--narrow" style="display:none;">
+          <div id="resultSummaryCard"></div>
+          <h2>계산 결과</h2>
+          <table class="result-table" id="resultTable">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>값</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </section>
   </main>
   <footer class="footer">
-    <div style="margin-bottom:6px;">
-        <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
     </div>
     <div class="footer-copy">©2025 실생활 도움zip. All rights reserved.</div>
   </footer>
   <div id="social-links" aria-hidden="true" style="display:none">
-    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank" data-platform="instagram">Instagram</a>
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
     <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
     <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
     <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
     <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
-    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank" data-platform="pinterest">Pinterest</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
     <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
   </div>
   <script>
@@ -391,88 +241,104 @@
     function removeComma(n) {
       return n.replace(/,/g, '');
     }
-    document.getElementById('purchasePrice').addEventListener('input', function(e) {
+    document.getElementById('purchasePrice').addEventListener('input', function (e) {
       const val = removeComma(e.target.value);
       e.target.value = addComma(val);
     });
-    document.getElementById('currentPrice').addEventListener('input', function(e) {
+    document.getElementById('currentPrice').addEventListener('input', function (e) {
       const val = removeComma(e.target.value);
       e.target.value = addComma(val);
     });
 
-    document.getElementById('profitForm').addEventListener('submit', function(e) {
+    document.getElementById('profitForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-      const purchasePrice = parseFloat(removeComma(document.getElementById('purchasePrice').value));
-      const currentPrice = parseFloat(removeComma(document.getElementById('currentPrice').value));
-      const quantity = parseInt(document.getElementById('quantity').value, 10);
+      const purchasePrice = document.getElementById('purchasePrice').value;
+      const currentPrice = document.getElementById('currentPrice').value;
+      const quantity = document.getElementById('quantity').value;
       const taxInput = document.getElementById('tax').value;
-      const taxRate = taxInput !== '' && !isNaN(parseFloat(taxInput)) ? parseFloat(taxInput) / 100 : 0;
-      
-      if (isNaN(purchasePrice) || isNaN(currentPrice) || isNaN(quantity) || purchasePrice <= 0 || currentPrice <= 0 || quantity <= 0) {
-        alert('모든 값을 올바르게 입력해주세요.');
-        return;
-      }
 
-      // 계산
-      const totalPurchaseAmount = purchasePrice * quantity;
-      const totalCurrentAmount = currentPrice * quantity;
-      const grossProfit = totalCurrentAmount - totalPurchaseAmount;
-      const taxAmount = Math.abs(grossProfit) * taxRate;
-      const netProfit = grossProfit - (grossProfit > 0 ? taxAmount : 0);
-      const profitRate = (grossProfit / totalPurchaseAmount) * 100;
-      const netProfitRate = (netProfit / totalPurchaseAmount) * 100;
+      try {
+        const response = await fetch('/.netlify/functions/calculateStockProfit', {
+          method: 'POST',
+          body: JSON.stringify({ purchasePrice, currentPrice, quantity, taxRate: taxInput }),
+          headers: { 'Content-Type': 'application/json' }
+        });
 
-      // 결과 표시
-      const tbody = document.querySelector('#resultTable tbody');
-      tbody.innerHTML = '';
-      
-      tbody.innerHTML += `<tr><td>총 매입금액</td><td>${totalPurchaseAmount.toLocaleString('ko-KR')}원</td></tr>`;
-      tbody.innerHTML += `<tr><td>총 현재가치</td><td>${totalCurrentAmount.toLocaleString('ko-KR')}원</td></tr>`;
-      tbody.innerHTML += `<tr><td>세전 수익금</td><td style="color:${grossProfit >= 0 ? '#198754' : '#dc3545'}">${grossProfit >= 0 ? '+' : ''}${grossProfit.toLocaleString('ko-KR')}원</td></tr>`;
-      tbody.innerHTML += `<tr><td>세전 수익률</td><td style="color:${profitRate >= 0 ? '#198754' : '#dc3545'}">${profitRate >= 0 ? '+' : ''}${profitRate.toFixed(2)}%</td></tr>`;
-      
-      if (taxRate > 0) {
-        tbody.innerHTML += `<tr><td>세금</td><td>${taxAmount.toLocaleString('ko-KR')}원</td></tr>`;
-        tbody.innerHTML += `<tr><td>세후 수익금</td><td style="color:${netProfit >= 0 ? '#198754' : '#dc3545'}">${netProfit >= 0 ? '+' : ''}${netProfit.toLocaleString('ko-KR')}원</td></tr>`;
-        tbody.innerHTML += `<tr><td>세후 수익률</td><td style="color:${netProfitRate >= 0 ? '#198754' : '#dc3545'}">${netProfitRate >= 0 ? '+' : ''}${netProfitRate.toFixed(2)}%</td></tr>`;
-      }
+        if (!response.ok) throw new Error('Calculation failed');
+        const data = await response.json();
 
-      // 요약 카드 표시
-      let summary = `
-        <div class="summary-block">
-          <div class="summary-title">세전 수익률</div>
-          <div class="summary-value" style="color:${profitRate >= 0 ? '#198754' : '#dc3545'}">${profitRate >= 0 ? '+' : ''}${profitRate.toFixed(2)}%</div>
-        </div>
-        <div class="summary-block">
-          <div class="summary-title">세전 수익금</div>
-          <div class="summary-value" style="color:${grossProfit >= 0 ? '#198754' : '#dc3545'}">${grossProfit >= 0 ? '+' : ''}${grossProfit.toLocaleString('ko-KR')}원</div>
-        </div>
-      `;
-      
-      if (taxRate > 0) {
-        summary += `
-          <div class="summary-block">
-            <div class="summary-title">세후 수익률</div>
-            <div class="summary-value" style="color:${netProfitRate >= 0 ? '#198754' : '#dc3545'}">${netProfitRate >= 0 ? '+' : ''}${netProfitRate.toFixed(2)}%</div>
-          </div>
-          <div class="summary-block">
-            <div class="summary-title">세후 수익금</div>
-            <div class="summary-value" style="color:${netProfit >= 0 ? '#198754' : '#dc3545'}">${netProfit >= 0 ? '+' : ''}${netProfit.toLocaleString('ko-KR')}원</div>
-          </div>
+        // 결과 표시
+        const tbody = document.querySelector('#resultTable tbody');
+        tbody.innerHTML = '';
+
+        const grossClass = data.grossProfit >= 0 ? 'positive' : 'negative';
+        const grossSymbol = data.grossProfit >= 0 ? '+' : '';
+        const profitRateClass = data.profitRate >= 0 ? 'positive' : 'negative';
+        const profitRateSymbol = data.profitRate >= 0 ? '+' : '';
+
+        tbody.innerHTML += `<tr><td>총 매입금액</td><td>${Math.round(data.totalPurchaseAmount).toLocaleString('ko-KR')}원</td></tr>`;
+        tbody.innerHTML += `<tr><td>총 현재가치</td><td>${Math.round(data.totalCurrentAmount).toLocaleString('ko-KR')}원</td></tr>`;
+        tbody.innerHTML += `<tr><td>세전 수익금</td><td class="${grossClass}">${grossSymbol}${Math.round(data.grossProfit).toLocaleString('ko-KR')}원</td></tr>`;
+        tbody.innerHTML += `<tr><td>세전 수익률</td><td class="${profitRateClass}">${profitRateSymbol}${data.profitRate.toFixed(2)}%</td></tr>`;
+
+        if (data.taxRate > 0) {
+          const netClass = data.netProfit >= 0 ? 'positive' : 'negative';
+          const netSymbol = data.netProfit >= 0 ? '+' : '';
+          const netRateClass = data.netProfitRate >= 0 ? 'positive' : 'negative';
+          const netRateSymbol = data.netProfitRate >= 0 ? '+' : '';
+
+          tbody.innerHTML += `<tr><td>세금</td><td>${Math.round(data.taxAmount).toLocaleString('ko-KR')}원</td></tr>`;
+          tbody.innerHTML += `<tr><td>세후 수익금</td><td class="${netClass}">${netSymbol}${Math.round(data.netProfit).toLocaleString('ko-KR')}원</td></tr>`;
+          tbody.innerHTML += `<tr><td>세후 수익률</td><td class="${netRateClass}">${netRateSymbol}${data.netProfitRate.toFixed(2)}%</td></tr>`;
+        }
+
+        // 요약 카드 표시
+        let summary = `
+            <div class="summary-block">
+            <div class="summary-title">세전 수익률</div>
+            <div class="summary-value ${profitRateClass}">${profitRateSymbol}${data.profitRate.toFixed(2)}%</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-title">세전 수익금</div>
+            <div class="summary-value ${grossClass}">${grossSymbol}${Math.round(data.grossProfit).toLocaleString('ko-KR')}원</div>
+            </div>
         `;
-      }
 
-      document.getElementById('resultSummaryCard').innerHTML = summary;
-      document.getElementById('resultSection').style.display = 'block';
+        if (data.taxRate > 0) {
+          const netSummaryClass = data.netProfit >= 0 ? 'positive' : 'negative';
+          const netSummarySymbol = data.netProfit >= 0 ? '+' : '';
+          const netRateSummaryClass = data.netProfitRate >= 0 ? 'positive' : 'negative';
+          const netRateSummarySymbol = data.netProfitRate >= 0 ? '+' : '';
+
+          summary += `
+            <div class="summary-block">
+                <div class="summary-title">세후 수익률</div>
+                <div class="summary-value ${netRateSummaryClass}">${netRateSummarySymbol}${data.netProfitRate.toFixed(2)}%</div>
+            </div>
+            <div class="summary-block">
+                <div class="summary-title">세후 수익금</div>
+                <div class="summary-value ${netSummaryClass}">${netSummarySymbol}${Math.round(data.netProfit).toLocaleString('ko-KR')}원</div>
+            </div>
+            `;
+        }
+
+        document.getElementById('resultSummaryCard').innerHTML = summary;
+        document.getElementById('resultSection').style.display = 'block';
+
+      } catch (error) {
+        console.error(error);
+        alert('계산 중 오류가 발생했습니다.');
+      }
     });
   </script>
   <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
   <script type="text/javascript">
-  if(!wcs_add) var wcs_add = {};
-  wcs_add["wa"] = "15bdb2c92e75400";
-  if(window.wcs) {
-    wcs_do();
-  }
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "15bdb2c92e75400";
+    if (window.wcs) {
+      wcs_do();
+    }
   </script>
 </body>
+
 </html>

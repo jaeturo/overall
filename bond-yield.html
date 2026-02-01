@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://toolzip.netlify.app/bond-yield.html">
+  <link rel="canonical" href="https://toolzip.netlify.app/bond-yield.html">
+  <title>채권 수익률 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="채권 매입가, 표면 금리, 만기를 입력하면 현재 수익률과 만기 수익률(YTM)을 계산하는 채권 수익률 계산기입니다.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- SEO -->
+  <meta name="title" content="채권 수익률 계산기 | 계산기 모음zip">
+  <meta name="keywords" content="채권 수익률 계산기, 현재 수익률, 만기 수익률, YTM, 채권 가격">
+  <meta name="author" content="계산기 모음zip">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="채권 수익률 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="채권 매입가, 표면 금리, 만기를 입력하면 현재 수익률과 만기 수익률(YTM)을 계산하는 채권 수익률 계산기입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/bond-yield.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
+  <meta property="og:locale" content="ko_KR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="채권 수익률 계산기 | 계산기 모음zip">
+  <meta name="twitter:description" content="채권 매입가, 표면 금리, 만기를 입력하면 현재 수익률과 만기 수익률(YTM)을 계산하는 채권 수익률 계산기입니다.">
+  <meta name="twitter:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+
+  <!-- UX/SEO extras -->
+  <meta name="language" content="ko">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="google-site-verification" content="_C8bm90OD05exvag-QZWkOA-amh0ZPwf-Z7hYkWUe-w">
+  <meta name="msvalidate.01" content="8F447B4B3698F7695A7AD4637D6271D8">
+  <meta name="naver-site-verification" content="609fe238310a3be61d608b20f341d43dfa668496">
+
+  <!-- PWA/browser -->
+  <meta name="theme-color" content="#ffffff">
+  <meta name="application-name" content="계산기 모음zip">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="채권 수익률 계산기">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K42GDRNW');</script>
+  <!-- End Google Tag Manager -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2839621694619517"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K42GDRNW" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdownBond">
+          <button type="button" class="dropbtn" id="dropdownBtnBond">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenuBond">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdownBond">
+          <button type="button" class="dropbtn" id="laborDropdownBtnBond">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenuBond">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdownBond">
+          <button type="button" class="dropbtn" id="loanDropdownBtnBond">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenuBond">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdownBond">
+          <button type="button" class="dropbtn" id="taxDropdownBtnBond">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenuBond">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdownBond">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtnBond">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenuBond">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdownBond">
+          <button type="button" class="dropbtn" id="dateDropdownBtnBond">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenuBond">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdownBond">
+          <button type="button" class="dropbtn" id="healthDropdownBtnBond">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenuBond">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdownBond">
+          <button type="button" class="dropbtn" id="ageDropdownBtnBond">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenuBond">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>채권 수익률 계산기</h1>
+        <p class="hero-copy">채권 투자 시 매입가, 표면 금리, 만기, 쿠폰 지급 빈도를 입력하면 현재 수익률과 만기 수익률(YTM)을 추정합니다. 투자 의사결정 전에 손쉽게 수익률을 비교해
+          보세요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>액면가</b>: 채권 만기 상환 금액을 입력합니다.</li>
+          <li><b>표면 금리</b>: 연간 쿠폰 이자율(%)을 입력합니다.</li>
+          <li><b>매입가</b>: 채권을 실제 매수한 가격을 입력합니다.</li>
+          <li><b>만기</b>: 현재 시점으로부터 남은 만기(년)를 입력합니다.</li>
+          <li><b>쿠폰 지급 주기</b>: 쿠폰이 지급되는 빈도를 선택합니다. (연 1회/2회/4회/12회)</li>
+          <li><b>예상 세율(선택)</b>: 이자소득세 등을 고려하고 싶다면 세율(%)을 입력하세요.</li>
+        </ul>
+        <p class="info-card__caption">※ 본 계산기는 일반적인 채권(고정금리, 만기 일시상환)을 기준으로 하며, 실제 수익률은 세법·시장 금리 변동에 따라 달라질 수 있습니다.</p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--narrow">
+          <form id="bondForm" autocomplete="off">
+            <div class="form-group">
+              <label for="faceValue">액면가(원)</label>
+              <input type="text" id="faceValue" inputmode="numeric" placeholder="100,000" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="couponRate">표면 금리(%)</label>
+              <input type="number" id="couponRate" min="0" max="30" step="0.01" placeholder="3.5" required>
+            </div>
+            <div class="form-group">
+              <label for="purchasePrice">매입가(원)</label>
+              <input type="text" id="purchasePrice" inputmode="numeric" placeholder="98,500" autocomplete="off"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="yearsToMaturity">남은 만기(년)</label>
+              <input type="number" id="yearsToMaturity" min="0.25" max="50" step="0.25" placeholder="5" required>
+            </div>
+            <div class="form-group">
+              <label for="paymentFrequency">쿠폰 지급 주기</label>
+              <select id="paymentFrequency">
+                <option value="1">연 1회</option>
+                <option value="2">연 2회(반기)</option>
+                <option value="4">연 4회(분기)</option>
+                <option value="12">연 12회(월)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="taxRate">예상 세율(%, 선택)</label>
+              <input type="number" id="taxRate" min="0" max="100" step="0.01" placeholder="15.4">
+            </div>
+            <button type="submit" class="btn btn-primary">계산하기</button>
+          </form>
+        </div>
+        <div class="compound-result compound-result--narrow" id="bondResult" style="display:none;">
+          <div id="resultSummaryCard"></div>
+          <h2>현금흐름 요약</h2>
+          <table class="result-table" id="resultTable">
+            <thead>
+              <tr>
+                <th>회차</th>
+                <th>쿠폰(세전)</th>
+                <th>쿠폰(세후)</th>
+                <th>누적 현금흐름(세후)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+  <script type="text/javascript" src="//wcs.pstatic.net/wcslog.js"></script>
+  <script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "15bdb2c92e75400";
+    if (window.wcs) {
+      wcs_do();
+    }
+  </script>
+  <script>
+    (function () {
+      const formatter = new Intl.NumberFormat('ko-KR');
+
+      function cleanNumber(value) {
+        if (typeof value !== 'string') value = String(value || '');
+        return value.replace(/[^\d.]/g, '');
+      }
+
+      function parseCurrency(value) {
+        const cleaned = cleanNumber(value);
+        return cleaned ? parseFloat(cleaned) : 0;
+      }
+
+      function bindCurrencyInput(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        let lock = false;
+        const formatValue = () => {
+          if (lock) return;
+          lock = true;
+          const raw = el.value.replace(/[^\d]/g, '');
+          el.value = raw ? formatter.format(parseInt(raw, 10)) : '';
+          lock = false;
+        };
+        el.addEventListener('input', formatValue);
+        formatValue();
+      }
+
+      ['faceValue', 'purchasePrice'].forEach(bindCurrencyInput);
+
+      const bondForm = document.getElementById('bondForm');
+      const resultSection = document.getElementById('bondResult');
+      const resultSummaryCard = document.getElementById('resultSummaryCard');
+      const resultTableBody = document.querySelector('#resultTable tbody');
+
+      function computeYTM(faceValue, couponRate, price, years, frequency) {
+        const coupon = faceValue * (couponRate / 100) / frequency;
+        const periods = Math.round(years * frequency);
+        if (periods <= 0) return 0;
+        const isZeroCoupon = coupon === 0;
+
+        let low = 0;
+        let high = 1;
+
+        const priceFromYield = (yieldRate) => {
+          const periodYield = yieldRate / frequency;
+          let pv = 0;
+          if (!isZeroCoupon) {
+            for (let i = 1; i <= periods; i++) {
+              pv += coupon / Math.pow(1 + periodYield, i);
+            }
+          }
+          pv += faceValue / Math.pow(1 + periodYield, periods);
+          return pv;
+        };
+
+        if (price <= 0) return 0;
+
+        while (priceFromYield(high) > price && high < 10) {
+          high *= 2;
+        }
+
+        for (let i = 0; i < 60; i++) {
+          const mid = (low + high) / 2;
+          const pv = priceFromYield(mid);
+          if (Math.abs(pv - price) < 1e-3) {
+            return mid * 100;
+          }
+          if (pv > price) {
+            low = mid;
+          } else {
+            high = mid;
+          }
+        }
+        return ((low + high) / 2) * 100;
+      }
+
+      bondForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const faceValue = document.getElementById('faceValue').value;
+        const couponRate = document.getElementById('couponRate').value;
+        const purchasePrice = document.getElementById('purchasePrice').value;
+        const years = document.getElementById('yearsToMaturity').value;
+        const frequency = document.getElementById('paymentFrequency').value;
+        const taxRateInput = document.getElementById('taxRate').value;
+
+        try {
+          const response = await fetch('/.netlify/functions/calculateBondYield', {
+            method: 'POST',
+            body: JSON.stringify({ faceValue, couponRate, purchasePrice, yearsToMaturity: years, paymentFrequency: frequency, taxRate: taxRateInput }),
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error('Calculation failed');
+          const data = await response.json();
+
+          resultTableBody.innerHTML = '';
+          data.schedule.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${row.period}</td>
+                <td>+${row.coupon.toLocaleString('ko-KR')}원</td>
+                <td>+${row.couponAfterTax.toLocaleString('ko-KR')}원</td>
+                <td>${row.cumulative.toLocaleString('ko-KR')}원</td>
+                `;
+            resultTableBody.appendChild(tr);
+          });
+
+          const summaryHtml = `
+                <div class="summary-block">
+                <div class="summary-title">현재 수익률</div>
+                <div class="summary-value">${data.currentYield.toFixed(2)}%</div>
+                <div class="summary-label">연간 쿠폰 ÷ 매입가</div>
+                </div>
+                <div class="summary-block">
+                <div class="summary-title">만기 수익률(YTM)</div>
+                <div class="summary-value">${data.ytm.toFixed(2)}%</div>
+                <div class="summary-label">복리 기준 추정</div>
+                </div>
+                <div class="summary-block">
+                <div class="summary-label">연간 쿠폰(세전)</div>
+                <div class="summary-value">${Math.round(data.annualCoupon).toLocaleString('ko-KR')}원</div>
+                </div>
+                <div class="summary-block">
+                <div class="summary-label">총 쿠폰(세후)</div>
+                <div class="summary-value">${Math.round(data.totalCouponAfterTax).toLocaleString('ko-KR')}원</div>
+                </div>
+                <div class="summary-block">
+                <div class="summary-label">만기 상환액</div>
+                <div class="summary-value positive">${Math.round(data.faceValue).toLocaleString('ko-KR')}원</div>
+                </div>
+            `;
+          resultSummaryCard.innerHTML = summaryHtml;
+          resultSection.style.display = 'block';
+          resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        } catch (error) {
+          console.error(error);
+          alert('계산 중 오류가 발생했습니다.');
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

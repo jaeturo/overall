@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부동산 양도세 계산기 | 계산기 모음zip</title>
+  <meta name="description" content="부동산 양도세 계산기로 양도가액, 취득가액, 필요경비, 보유 기간을 입력하여 예상 양도소득세와 지방세를 계산해보세요.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="부동산 양도세 계산기 | 계산기 모음zip">
+  <meta property="og:description" content="부동산 양도세 계산기로 양도가액, 취득가액, 필요경비, 보유 기간을 입력하여 예상 양도소득세와 지방세를 계산해보세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toolzip.netlify.app/real-estate-tax-calculator.html">
+  <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
+    <nav class="navbar">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
+            <li><a href="compound.html">복리 계산기</a></li>
+            <li><a href="dividend.html">배당률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
+            <li><a href="averaging.html">물타기 계산기</a></li>
+            <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdown">
+          <button type="button" class="dropbtn" id="laborDropdownBtn">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenu">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdown">
+          <button type="button" class="dropbtn" id="loanDropdownBtn">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenu">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdown">
+          <button type="button" class="dropbtn" id="taxDropdownBtn">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenu">
+            <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
+            <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="realEstateDropdown">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtn">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenu">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+            <li><a href="real-estate-tax-calculator.html">부동산 양도세 계산기</a></li>
+            <li><a href="real-estate-acquisition-tax-calculator.html">부동산 취득세 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdown">
+          <button type="button" class="dropbtn" id="dateDropdownBtn">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenu">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdown">
+          <button type="button" class="dropbtn" id="healthDropdownBtn">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenu">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
+            <li><a href="age-calculator.html">나이 계산기</a></li>
+            <li><a href="zodiac-calculator.html">띠 계산기</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <script src="assets/js/main.js"></script>
+  </header>
+  <main class="main-content">
+    <section class="section">
+      <div class="intro-section">
+        <h1>부동산 양도세 계산기</h1>
+        <p class="hero-copy">양도가액, 취득가액, 필요경비, 보유 기간을 입력하면 예상 양도소득세와 지방소득세를 빠르게 확인할 수 있습니다. 간단한 시뮬레이션으로 세금 부담과 절세 전략을 미리
+          점검해 보세요.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="info-card">
+        <strong>사용 방법 안내</strong>
+        <ul>
+          <li><b>양도가액</b>: 부동산을 매도할 예정 금액(또는 실제 매도 금액)을 입력합니다.</li>
+          <li><b>취득가액</b>: 부동산을 구입했을 때의 금액을 입력합니다.</li>
+          <li><b>필요경비</b>: 중개수수료, 수선비 등 양도 과정에서 공제 가능한 비용을 입력합니다.</li>
+          <li><b>기본 공제액</b>: 1년에 한 번 적용되는 기본 공제액(기본값 250만원)을 조정할 수 있습니다.</li>
+          <li><b>보유 기간</b>: 장기보유특별공제 적용을 위한 보유 연수를 입력합니다. 3년 초과분은 연 2%씩, 최대 30%까지 공제합니다.</li>
+          <li>모든 값을 입력한 후 <b>양도세 계산하기</b> 버튼을 누르면 세액이 표시됩니다.</li>
+        </ul>
+        <p class="info-card__caption info-card__caption--warning"><strong>※ 유의사항</strong><br>
+          실제 부동산 양도세는 주택 유형, 조정대상지역 여부, 일시적 2주택 등 다양한 조건에 따라 달라질 수 있습니다. 본 계산기는 기본적인 예시로 참고용으로만 사용하시고, 실제 신고 전에는 세무 전문가와
+          상담하세요.
+        </p>
+      </div>
+    </section>
+
+    <div class="ad-banner ad-banner--inline">
+      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fousInY12EGeI3vh" data-ad-width="300"
+        data-ad-height="250"></ins>
+      <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+    <section class="section">
+      <div class="calculator-shell">
+        <div class="compound-card compound-card--wide">
+          <form id="realEstateTaxForm" autocomplete="off">
+            <div class="form-group">
+              <label for="salePrice">양도가액(₩)</label>
+              <input type="text" id="salePrice" name="salePrice" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="600,000,000" required>
+            </div>
+            <div class="form-group">
+              <label for="purchasePrice">취득가액(₩)</label>
+              <input type="text" id="purchasePrice" name="purchasePrice" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="300,000,000" required>
+            </div>
+            <div class="form-group">
+              <label for="expenses">필요경비(₩, 선택)</label>
+              <input type="text" id="expenses" name="expenses" inputmode="numeric" pattern="[0-9,]*"
+                placeholder="10,000,000">
+            </div>
+            <div class="form-group">
+              <label for="basicDeduction">기본 공제액(₩)</label>
+              <input type="text" id="basicDeduction" name="basicDeduction" inputmode="numeric" pattern="[0-9,]*"
+                value="2,500,000" required>
+            </div>
+            <div class="form-group">
+              <label for="holdingYears">보유 기간(년)</label>
+              <input type="number" id="holdingYears" name="holdingYears" min="0" max="30" step="1" value="5">
+            </div>
+            <button type="submit" class="btn btn-primary">양도세 계산하기</button>
+          </form>
+        </div>
+
+        <div id="resultSection" class="compound-result compound-result--wide" style="display:none;">
+          <div id="resultSummaryCard"></div>
+          <h2>예상 양도세 결과</h2>
+          <table class="result-table" id="resultTable">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>금액(₩)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
+    </div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
+  </footer>
+
+  <div id="social-links" aria-hidden="true" style="display:none">
+    <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="instagram">Instagram</a>
+    <a href="https://www.facebook.com/" rel="me nofollow noopener" target="_blank" data-platform="facebook">Facebook</a>
+    <a href="https://www.youtube.com/" rel="me nofollow noopener" target="_blank" data-platform="youtube">YouTube</a>
+    <a href="https://www.linkedin.com/" rel="me nofollow noopener" target="_blank" data-platform="linkedin">LinkedIn</a>
+    <a href="https://www.threads.net/" rel="me nofollow noopener" target="_blank" data-platform="threads">Threads</a>
+    <a href="https://www.pinterest.com/" rel="me nofollow noopener" target="_blank"
+      data-platform="pinterest">Pinterest</a>
+    <a href="https://twitter.com/" rel="me nofollow noopener" target="_blank" data-platform="twitter">Twitter</a>
+  </div>
+
+  <script>
+    const formatter = new Intl.NumberFormat('ko-KR');
+
+    function toNumber(value) {
+      if (!value) return 0;
+      return parseInt(String(value).replace(/[^\d]/g, ''), 10) || 0;
+    }
+
+    function toCurrency(number) {
+      return formatter.format(Math.round(number)) + '원';
+    }
+
+    function bindCurrencyInput(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', (e) => {
+        const raw = toNumber(e.target.value);
+        e.target.value = raw ? formatter.format(raw) : '';
+      });
+    }
+
+    ['salePrice', 'purchasePrice', 'expenses', 'basicDeduction'].forEach(bindCurrencyInput);
+
+    document.getElementById('realEstateTaxForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const salePrice = document.getElementById('salePrice').value;
+      const purchasePrice = document.getElementById('purchasePrice').value;
+      const expenses = document.getElementById('expenses').value;
+      const basicDeduction = document.getElementById('basicDeduction').value;
+      const holdingYears = document.getElementById('holdingYears').value;
+
+      try {
+        const response = await fetch('/.netlify/functions/calculateRealEstateTax', {
+          method: 'POST',
+          body: JSON.stringify({ salePrice, purchasePrice, expenses, basicDeduction, holdingYears }),
+          headers: { 'Content-Type': 'application/json' }
+        });
+
+        if (!response.ok) throw new Error('Calculation failed');
+        const data = await response.json();
+
+        const tbody = document.querySelector('#resultTable tbody');
+        tbody.innerHTML = '';
+
+        const rows = [
+          ['양도가액', toCurrency(data.salePrice)],
+          ['취득가액', toCurrency(data.purchasePrice)],
+          ['필요경비', toCurrency(data.expenses)],
+          ['기본 공제 후 양도차익', toCurrency(data.taxableGainBeforeLT)],
+          ['장기보유특별공제', `${toCurrency(data.longTermDeduction)} (${data.longTermRate.toFixed(0)}%)`],
+          ['과세표준', toCurrency(data.taxableIncome)],
+          ['양도소득세(국세)', toCurrency(data.baseTax)],
+          ['지방소득세(10%)', toCurrency(data.localTax)],
+          ['총 예상 세액', toCurrency(data.totalTax)],
+          ['세후 보유 차익', toCurrency(data.netAfterTax)]
+        ];
+
+        rows.forEach(([label, value]) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `<td>${label}</td><td>${value}</td>`;
+          tbody.appendChild(tr);
+        });
+
+        const summary = `
+            <div class="summary-block">
+            <div class="summary-title">총 예상 세액</div>
+            <div class="summary-value">${toCurrency(data.totalTax)}</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">양도소득세</div>
+            <div class="summary-value">${toCurrency(data.baseTax)}</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">지방소득세</div>
+            <div class="summary-value">${toCurrency(data.localTax)}</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">장기보유 공제율</div>
+            <div class="summary-value">${data.longTermRate.toFixed(0)}%</div>
+            </div>
+            <div class="summary-block">
+            <div class="summary-label">세후 양도차익</div>
+            <div class="summary-value positive">${toCurrency(data.netAfterTax)}</div>
+            </div>
+        `;
+
+        document.getElementById('resultSummaryCard').innerHTML = summary;
+        document.getElementById('resultSection').style.display = 'block';
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      } catch (error) {
+        console.error(error);
+        alert('계산 중 오류가 발생했습니다.');
+      }
+    });
+  </script>
+</body>
+
+</html>

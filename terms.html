@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:url" content="https://toolzip.netlify.app/terms.html">
   <link rel="canonical" href="https://toolzip.netlify.app/terms.html">
-  <title>서비스 이용약관 | 만능도구 모음zip</title>
+  <title>서비스 이용약관 | 계산기 모음zip</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- SEO -->
-  <meta name="title" content="서비스 이용약관 | 만능도구 모음zip">
-  <meta name="description" content="만능도구 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
-  <meta name="keywords" content="이용약관, 서비스 약관, 만능도구 모음zip 약관">
-  <meta name="author" content="만능도구 모음zip">
+  <meta name="title" content="서비스 이용약관 | 계산기 모음zip">
+  <meta name="description" content="계산기 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
+  <meta name="keywords" content="이용약관, 서비스 약관, 계산기 모음zip 약관">
+  <meta name="author" content="계산기 모음zip">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="서비스 이용약관 | 만능도구 모음zip">
-  <meta property="og:description" content="만능도구 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
+  <meta property="og:title" content="서비스 이용약관 | 계산기 모음zip">
+  <meta property="og:description" content="계산기 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toolzip.netlify.app/terms.html">
   <meta property="og:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
-  <meta property="og:image:alt" content="만능도구 모음zip">
-  <meta property="og:site_name" content="만능도구 모음zip">
+  <meta property="og:image:alt" content="계산기 모음zip">
+  <meta property="og:site_name" content="계산기 모음zip">
   <meta property="og:locale" content="ko_KR">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="서비스 이용약관 | 만능도구 모음zip">
-  <meta name="twitter:description" content="만능도구 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
+  <meta name="twitter:title" content="서비스 이용약관 | 계산기 모음zip">
+  <meta name="twitter:description" content="계산기 모음zip 서비스 이용약관 페이지입니다. 서비스 사용 조건과 권리/책임을 안내합니다.">
   <meta name="twitter:image" content="https://toolzip.netlify.app/apple-touch-icon.png">
 
   <!-- UX/SEO extras -->
@@ -42,10 +42,10 @@
 
   <!-- PWA/browser -->
   <meta name="theme-color" content="#ffffff">
-  <meta name="application-name" content="만능도구 모음zip">
+  <meta name="application-name" content="계산기 모음zip">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="만능도구 모음zip">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="계산기 모음zip">
 
   <!-- Icons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -67,98 +67,122 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <header class="header">
+    <div class="logo-section">
+      <a href="index.html" class="logo">계산기 모음zip</a>
+      <p>실생활에 꼭 필요한 계산기와 도구들을 한 곳에</p>
+    </div>
     <nav class="navbar">
-      <div class="logo">만능도구 모음zip</div>
       <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">홈</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">📈 계산기</a>
-          <ul class="dropdown-content">
+        <li class="nav-item nav-home"><a href="index.html">🏠 홈</a></li>
+        <li class="nav-item dropdown" id="stockDropdown">
+          <button type="button" class="dropbtn" id="dropdownBtn">📈 투자 계산기</button>
+          <ul class="dropdown-content" id="dropdownMenu">
             <li><a href="compound.html">복리 계산기</a></li>
             <li><a href="dividend.html">배당률 계산기</a></li>
-            <li><a href="profit.html">주식 수익률 계산기</a></li>
+            <li><a href="profit.html">주가 수익률 계산기</a></li>
+            <li><a href="bond-yield.html">채권 수익률 계산기</a></li>
             <li><a href="averaging.html">물타기 계산기</a></li>
             <li><a href="multi-average.html">여러 종목 평단가 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="laborDropdown">
+          <button type="button" class="dropbtn" id="laborDropdownBtn">💼 근로 계산기</button>
+          <ul class="dropdown-content" id="laborDropdownMenu">
+            <li><a href="kr-salary-calculator.html">연봉 실수령액 계산기</a></li>
+            <li><a href="freelancer-tax-calculator.html">프리랜서 3.3% 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="loanDropdown">
+          <button type="button" class="dropbtn" id="loanDropdownBtn">🏦 대출 계산기</button>
+          <ul class="dropdown-content" id="loanDropdownMenu">
+            <li><a href="loan-calculator.html">원리금·원금 균등상환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="taxDropdown">
+          <button type="button" class="dropbtn" id="taxDropdownBtn">💸 세금 계산기</button>
+          <ul class="dropdown-content" id="taxDropdownMenu">
             <li><a href="us-tax-calculator.html">미국주식 양도세 계산기</a></li>
             <li><a href="us-deduction-calculator.html">미국주식 공제 혜택 계산기</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">🎂 나이 계산기</a>
-          <ul class="dropdown-content">
+        <li class="nav-item dropdown" id="realEstateDropdown">
+          <button type="button" class="dropbtn" id="realEstateDropdownBtn">🏠 부동산 계산기</button>
+          <ul class="dropdown-content" id="realEstateDropdownMenu">
+            <li><a href="jeonse-to-wolse.html">전월세 전환 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="dateDropdown">
+          <button type="button" class="dropbtn" id="dateDropdownBtn">📅 날짜 계산기</button>
+          <ul class="dropdown-content" id="dateDropdownMenu">
+            <li><a href="lunar-solar-converter.html">음력·양력 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="healthDropdown">
+          <button type="button" class="dropbtn" id="healthDropdownBtn">💪 건강 계산기</button>
+          <ul class="dropdown-content" id="healthDropdownMenu">
+            <li><a href="bmi-calculator.html">BMI 계산기</a></li>
+            <li><a href="bmr-calculator.html">기초 대사량 계산기</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown" id="ageDropdown">
+          <button type="button" class="dropbtn" id="ageDropdownBtn">🎂 나이 계산기</button>
+          <ul class="dropdown-content" id="ageDropdownMenu">
             <li><a href="age-calculator.html">나이 계산기</a></li>
             <li><a href="zodiac-calculator.html">띠 계산기</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">💕 궁합</a>
-          <ul class="dropdown-content">
-            <li><a href="zodiac-compatibility.html">띠별 궁합</a></li>
-          </ul>
-        </li>
-          <!-- <li><a href="terms.html">이용약관</a></li> -->
+        <!-- 기능별 메뉴는 추후 추가 -->
       </ul>
     </nav>
-  <script>
-    // 모바일 햄버거 메뉴 토글
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-      });
-      
-      // 메뉴 링크 클릭 시 메뉴 닫기
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
-        });
-      });
-    });
-  </script>
+  <script src="assets/js/main.js"></script>
   </header>
   <main class="main-content">
-    <section class="intro-section">
-      <h1>서비스 이용약관</h1>
+    <section class="section">
+      <div class="intro-section">
+        <h1>서비스 이용약관</h1>
+      </div>
     </section>
-    <!-- 카카오애드핏 광고 -->
-    <div style="display:flex;justify-content:center;margin:30px 0;">
+
+    <div class="ad-banner ad-banner--inline">
       <ins class="kakao_ad_area" style="display:none;"
       data-ad-unit = "DAN-fousInY12EGeI3vh"
       data-ad-width = "300"
       data-ad-height = "250"></ins>
       <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
-    <section class="feature-section" style="max-width:700px;margin:0 auto;">
-      <h2>1. 기본 원칙</h2>
-      <p>본 사이트의 이용약관은 서비스의 사용 조건, 사용자와 운영자 간의 권리와 책임을 안내합니다.</p>
-      <h2>2. 용어 정의</h2>
-      <ul>
-        <li>"서비스"란 만능도구 모음zip이 제공하는 모든 기능을 의미합니다.</li>
-        <li>"사용자"란 만능도구 모음zip의 서비스를 이용하는 모든 방문자를 포함합니다.</li>
-      </ul>
-      <h2>3. 약관의 안내 및 변경</h2>
-      <p>본 약관은 사이트 첫 화면에 게시되며, 관련 법령을 준수하는 범위 내에서 변경될 수 있습니다.</p>
-      <h2>4. 계산 결과 안내</h2>
-      <p>모든 계산 결과는 참고용으로 제공되며, 법적·행정적 효력은 없습니다. 중요한 결정에는 전문가 상담을 권장합니다.</p>
-      <h2>5. 데이터 처리 및 보호</h2>
-      <p>서비스 이용 중 생성된 데이터는 처리 후 즉시 삭제되며, 별도 저장하지 않습니다. 사용자의 프라이버시 보호를 최우선으로 합니다.</p>
+
+    <section class="section">
+      <article class="terms-card">
+        <h2>1. 기본 원칙</h2>
+        <p>본 사이트의 이용약관은 서비스 사용 조건과 사용자 및 운영자 간의 권리와 책임을 안내합니다.</p>
+
+        <h2>2. 용어 정의</h2>
+        <ul>
+          <li><b>서비스</b>: 계산기 모음zip이 제공하는 모든 기능과 페이지를 의미합니다.</li>
+          <li><b>사용자</b>: 계산기 모음zip의 서비스를 이용하는 모든 방문자를 포함합니다.</li>
+        </ul>
+
+        <h2>3. 약관의 안내 및 변경</h2>
+        <p>본 약관은 사이트 첫 화면에 게시되며, 관련 법령을 준수하는 범위 내에서 변경될 수 있습니다. 변경 시 공지사항을 통해 고지합니다.</p>
+
+        <h2>4. 계산 결과 안내</h2>
+        <p>모든 계산 결과는 참고용으로 제공되며 법적·행정적 효력은 없습니다. 중요한 의사결정 시에는 반드시 전문가 상담을 권장드립니다.</p>
+
+        <h2>5. 데이터 처리 및 보호</h2>
+        <p>서비스 이용 중 입력된 데이터는 계산 수행 후 즉시 삭제되며, 별도로 저장되지 않습니다. 계산기 모음zip은 사용자의 프라이버시 보호를 최우선으로 합니다.</p>
+      </article>
     </section>
   </main>
   <footer class="footer">
-    <div style="margin-bottom:6px;">
-      <a href="terms.html" style="color:#000;text-decoration:none;">서비스 이용약관</a>
+    <div class="footer-links">
+      <a href="terms.html">서비스 이용약관</a>
     </div>
-    <div class="footer-copy">©2025 만능도구 모음zip. All rights reserved.</div>
+    <div class="footer-copy">©2025 계산기 모음zip. All rights reserved.</div>
   </footer>
   <div id="social-links" aria-hidden="true" style="display:none">
     <a href="https://www.instagram.com/" rel="me nofollow noopener" target="_blank" data-platform="instagram">Instagram</a>
