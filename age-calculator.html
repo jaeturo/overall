@@ -464,24 +464,7 @@
       }
     });
 
-    // 생일까지 남은 일수 계산
-    function getDaysUntilBirthday(birthDate, currentDate) {
-      const nextBirthday = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-      if (nextBirthday <= currentDate) {
-        nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
-      }
-      const diffTime = nextBirthday - currentDate;
-      return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    }
 
-    // 다음 생일 날짜
-    function getNextBirthday(birthDate, currentDate) {
-      const nextBirthday = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
-      if (nextBirthday <= currentDate) {
-        nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
-      }
-      return `${nextBirthday.getMonth() + 1}월 ${nextBirthday.getDate()}일`;
-    }
 
   </script>
 

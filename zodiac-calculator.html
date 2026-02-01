@@ -336,26 +336,7 @@
       }
     });
 
-    // 띠 계산 (1993년생 닭(유) 기준으로 강제 매칭)
-    function getZodiacSign(year) {
-      const zodiacs = ['쥐', '소', '호랑이', '토끼', '용', '뱀', '말', '양', '원숭이', '닭', '개', '돼지'];
-      const chineseChars = ['자', '축', '인', '묘', '진', '사', '오', '미', '신', '유', '술', '해'];
 
-      // 1993년생이 닭(유)가 되도록 강제 조정
-      // 1993 % 12 = 1이므로, 인덱스 1이 닭이어야 함
-      // 하지만 현재 배열에서 인덱스 1은 소(축)이므로, 계산 방식을 조정
-      const baseYear = 1993; // 닭띠 기준년도
-      const baseIndex = 9; // 닭의 인덱스 (10번째)
-      const yearDiff = year - baseYear;
-      const adjustedIndex = (baseIndex + yearDiff) % 12;
-      const finalIndex = adjustedIndex < 0 ? adjustedIndex + 12 : adjustedIndex;
-
-      return {
-        zodiac: zodiacs[finalIndex],
-        chineseChar: chineseChars[finalIndex],
-        order: finalIndex + 1
-      };
-    }
 
     // 띠별 특성
     function getZodiacTraits(zodiac) {
